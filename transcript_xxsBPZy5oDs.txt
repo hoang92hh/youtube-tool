@@ -1,0 +1,813 @@
+[4s] Xin chào anh em. Trong video này tôi sẽ
+[6s] chia sẻ cho anh em một cái tin rất là
+[7s] mới đó là Clos Fable 5 và Clos Mos đã
+[11s] chính thức có mặt và anh em đã có thể sử
+[13s] dụng. Trong cái nội dung này thực ra nó
+[15s] không đơn giản là chỉ có một mô hình mới
+[17s] của hãng cung cấp. Trong cái nội dung
+[18s] hôm nay tôi sẽ chia sẻ cho các anh em là
+[20s] thứ nhất tóm gọn cho anh em khi cái tin
+[22s] này mới ra thì anh em cần biết những cái
+[23s] điều gì được chưa? Thay vì đọc các tài
+[25s] liệu anh em chỉ cần biết một cây thôi là
+[27s] xong. bỏ qua tất cả những cái gọi là
+[29s] thông số nào gây nhiễu bỏ hết. Và tôi
+[32s] muốn nói anh em hai thứ quan trọng hơn ở
+[33s] đằng sau là cái xu hướng gì đang xảy ra
+[36s] được chưa ạ? Tại sao mà có hai tuần
+[39s] trước đây thôi nó mới ra mô hình gọi là
+[41s] Opus 4.8 gây xôn xao mọi thứ đúng không?
+[43s] Bây giờ chỉ có một thời gian rất ngắn
+[45s] lại tiếp tục ra mô hình mới chuyện gì
+[47s] đang xảy ra và nhìn cách rộng hơn là cảm
+[49s] hành trình nhiều tháng gần nay thì đâu
+[52s] là thứ mà các hãng họ đang làm. Những
+[54s] thứ này thì nó sẽ ảnh hưởng tới doanh
+[55s] nghiệp ra sao? Đặc biệt anh em sẽ thấy
+[58s] rằng các bạn sẽ có rất nhiều rất nhiều
+[60s] cơ hội cho những cái doanh nghiệp mà
+[61s] doanh nghiệp bạn không có những người
+[63s] chuyên về công nghệ không cần thiết
+[64s] luôn. Đây là một cái thời cơ cho những
+[66s] đơn vị bạn rất hiểu rõ về một ngành nào
+[69s] đấy. Ví dụ bạn làm logistic, bạn làm du
+[71s] lịch, bạn làm phê ảnh kinh doanh nào đó,
+[72s] bạn không có đội ngũ kỹ thuật hoặc rất
+[74s] ít đội ngũ kỹ thuật. Đây là thời cơ của
+[76s] anh em. Lý do tại sao thì tôi chia sẻ ở
+[78s] trong video này. Ok ạ. Đầu tiên luôn vào
+[81s] luôn là cụ thể cái tin tức, cái mô hình
+[83s] mới này ra mắt anh em cần biết cái gì.
+[85s] Nhớ thế này thôi anh em nhá.
+[86s] Đây đây là toàn bộ những gì anh em mình
+[88s] cần lưu trong đầu. Thứ nhất là nó là cái
+[90s] gì? Thứ hai là giá rổ khi sử dụng thế
+[92s] nào, có đắt không? Bao tiền, nên dùng
+[95s] như thế nào và có cái lưu ý gì khác
+[96s] không? Thế thôi được không ạ? Đầu tiên
+[99s] là nó là cái gì? Thì cái ông Fable Fable
+[102s] 5 này hay là ông Mithos này nó là một
+[104s] cái mô hình mới được ra mắt ngày mùng 9
+[106s] tháng 6 năm 2026. Ờ thời điểm tôi làm
+[109s] video này thì nó mới ra cách đây ờ
+[111s] khoảng mười mấy tiếng thôi. Được chưa ạ?
+[113s] Và hai cái ông này thì bản chất ấy hai
+[116s] bố này nó các anh em có hiểu nó làm một
+[117s] thôi. Về mặt lõi thì nó là một. Thì cái
+[120s] ông Mitos này là cái ông được ông
+[122s] Antrupic ông ấy nhá hàng từ lâu lâu rồi
+[125s] ông cứ nhá suốt là tôi có một cái mô
+[126s] hình khủng khiếp lắm, ghê gớm lắm. Được
+[128s] chưa? Chưa dám chưa dám xuất bản đâu.
+[131s] Bởi vì nó xuất bản ra nó làm rũng động
+[132s] anh em. Và cái ông Mitos này hiện tại
+[135s] thì nó đang bị khóa ở trong một cái dự
+[137s] án nghiên cứu của nghiên cứu đ hợp tác
+[139s] với chính phủ Mỹ. Nó có có dự án gọi là
+[141s] project glassing này. Đấy nó có một cái
+[143s] dự án này đây. Thông tin chính thống của
+[146s] hãng tôi ở đây. Được chưa ạ? Một cái
+[149s] nhóm nhỏ về liên quan đến bảo mật hạ
+[151s] tầng bảo mật. Đấy nó gọi nó đã thực hiện
+[153s] cái launching cái clot meod 5 này. Và
+[156s] cái ông Mios 5 này chỉ được triển khai
+[158s] trong cái dự án này thôi. Dự án là của
+[160s] chính phủ. Dự án này cụ thể nó là thế
+[162s] nào? Thì về mặt tư tưởng là cái ông
+[165s] Antrupic ông nói rằng cái mô hình MEIOS
+[168s] của ông này này nó gọi là MEOP preview
+[170s] này nó có một cái năng lực rất là lớn cụ
+[172s] thể là năng lực liên quan đến vấn đề an
+[174s] ninh bảo mật. Cụ thể ở đây có một cái
+[176s] bài phân tích kỹ thuật an em có thể xem
+[180s] đây ông nói rằng ngày bài này vào mùng 7
+[183s] tháng 0 năm 2026 nhá thì ông bảo cái mô
+[185s] hình này này nó đã giải quyết nó đã nó
+[188s] đã bắt được một loạt những cái lỗ hổng
+[190s] bảo mật tồn tại ở nhiều phần mềm quan
+[192s] trọng ở trong nhiều năm thậm chí hàng
+[194s] chục năm tức là nó tồn tại rất lâu rồi
+[196s] rất nhiều kỹ sư rất nhiều hãng vào check
+[198s] rồi không phát hiện được ông này ra phát
+[200s] hiện được rất kinh khủng khiếp anh em
+[203s] đấy rất nhiều rất sự khủng khiếp và vào
+[205s] đây. Đấy, ví dụ như là 27 năm này. Đây
+[208s] 27 năm này. Đấy. À đấy.
+[213s] Được chưa? Hay là cái vấn đề về bảo mật
+[215s] là 16 năm tồn tại này. Rất là lâu rồi mà
+[218s] nó xử lý được. Và đửa ra một vấn đề là
+[221s] gì ạ? Là vậy thì sau này ở những cái hạ
+[224s] tầng AI nó tồn tại cái nguy cơ bị tấn
+[226s] công hay là các phần mềm quan trọng của
+[228s] nguy cơ bị tấn công. Và cái ông này này
+[230s] ông ấy hiện nay cái dự án về chính phủ
+[232s] đấy là nó hợp tác là để hợp tác với các
+[235s] bên lớn và để nó thực hiện việc bảo mật
+[237s] cho các phần mềm quan trọng. Đấy tư
+[240s] tưởng là như vậy được chưaạ? Nó là gì?
+[242s] Là như thế. Và cái ông Mithos này nó mới
+[244s] bóc tách nó tẽ thành hai đường. Một là
+[246s] cái đường là làm việc với ông ông chính
+[247s] phủ này nhá. Chuyên làm về phần bảo mật
+[249s] nhá. Và một cái phần thứ hai là cung cấp
+[251s] bản thương mại là cái thứ mà anh em đang
+[253s] được dùng ngay thời điểm này. Các bạn có
+[254s] thể truy cập vào sử dụng. nó gọi là ông
+[256s] Fable 5 này. Bản chất cái ông Fable này
+[259s] là năng lực thì cũng giống như ông Mitos
+[261s] thôi nhưng mà nó bị xích lại một số
+[263s] những công việc rất là nguy hiểm. Tôi ví
+[265s] dụ bởi vì nó có khả năng là bảo mật gọi
+[268s] là quét tấn công rất là nguy hiểm nên là
+[270s] những cái việc nào liên quan đến an ninh
+[272s] mạng là nó khóa lại. Nó không cho phép
+[274s] ông dùng cái mô hình này để đi tấn công
+[276s] bạn, để đi hack là không có. Hay là sử
+[279s] dụng cái mô hình này để chế tạo những vũ
+[281s] khí về sinh hóa học là nó không cho
+[283s] phép. hay sử dụng để chống trưng cất dữ
+[285s] liệu. Nếu anh em xem nhiều tháng trước
+[288s] thì nó có một vụ lùm sùm là Antropic tố
+[291s] cáo rằng các ông gọi là làm AI ở Trung
+[294s] Quốc là ông trưng cất dữ liệu. Ông trưng
+[297s] cất dữ liệu tức là thế nào? Tức là
+[299s] ông tức là ông ông Anic nói rằng tôi mất
+[301s] bao nhiêu công sức dạy dỗ chán chê thì
+[304s] mới ra được cái mô hình nó ngon, nó
+[305s] thông minh thế này. Ông kia chẳng chưng
+[307s] cất gì cả. Ông tạo rất là nhiều cái
+[308s] section. Ông ấy kết nối vào cái mô hình
+[310s] của tôi, ông ấy hỏi đ ông, ông ấy lấy
+[312s] cái tư duy của tôi xong ông ấy dạy cho
+[313s] cái mô hình của ông ấy. Và ở trong cái
+[315s] ông Fable 5 này ông ấy sẽ hạn chế được
+[318s] cái công việc chứng cất rượu đấy. Tức là
+[320s] nó tìm và nó chặn nó. Và định vị cái ông
+[323s] này là phân cúc cao cấp giống như xe
+[325s] siêu xe được chưa ạ? Nếu anh em hình
+[327s] dung các mô hình trước đây giống như
+[329s] hãng xe, loại xe thì cái ông này là
+[330s] giống như là tạo ra một cái phân khúc xe
+[332s] sang ra mắt. Ok. Vậy thì giá rổ của xe
+[336s] sang này như thế nào đây? Giá thì nó như
+[338s] thế này thì à nó so với cái phiên bản
+[341s] gọi là trước đây nó đưa ra bản thử
+[343s] nghiệm của ông thos ấy thì giá này đang
+[344s] rẻ hơn khoảng 50% so với giá họ là ướm
+[347s] họ tung tin ra thị trường. Thì tiền của
+[351s] ông AI nhá anh em hình dung này. Tiền
+[352s] của tất cả ông AI thì nó có nó cách tính
+[355s] là dựa trên token. Tức là thế nào? Tức
+[358s] là anh em hình dung đa phần tất cả các
+[360s] ông AI hãng nào không quan trọng thì cái
+[362s] lõi của nó là ông Lom tức là ông một cái
+[365s] mô hình ngôn ngữ lớn. Được chưa ạ? Cái
+[367s] mô hình ông Method này ông hay ông Fable
+[369s] này là chất là mô hình thì chúng ta sẽ
+[372s] chat với cái mô hình đấy. Tức là đưa vào
+[374s] dạng text và yêu cầu nó làm việc gì đấy.
+[376s] Sau khi làm xong nó sẽ trả lời chúng ta
+[378s] bản chất là đầu vào là tex và đầu ra là
+[380s] tex. Anh em hình dung không? Cái tex đấy
+[382s] bản chất nó gọi là token. Chia nhỏ ra
+[384s] đơn vị là token. Và nó tính tiền dựa
+[386s] trên số lượng token đấy. Và thông thường
+[389s] sẽ tính tiền dựa trên là vậy 1 triệu
+[391s] token tôi sẽ tính bao nhiêu tiền ở đây
+[393s] là 1 triệu token đầu vào tức là chúng ta
+[395s] nói chuyện với nó. Đấy tôi yêu ra lệnh
+[396s] cho nó thì mất 1 triệu cái token đấy thì
+[398s] là giá 10 đô và nếu nó trả lời cho chúng
+[401s] ta nó phân tích và nó trả lời kết quả
+[403s] thì 1 triệu toen đầu ra đấy là 50 đô
+[405s] được chưa ạ? Đây là giá tiền sau này anh
+[408s] nếu anh em mình dùng anh em biết là tiền
+[409s] như thế nào tất nhiên tiền thì nó phải
+[411s] so với năng lực chứ không phải tiền này
+[413s] chưa nói đắt hay rẻ nếu mà tiền tạo ra
+[415s] kết quả rất là ngon thì nó sẽ nó sẽ
+[417s] tương xứng thôi. Hãy xem năng lực của nó
+[419s] nhá. Thì đây là năng lực của mấy ông ấy
+[421s] phân tích ờ họ tự nói được chưa ạ? Tức
+[424s] là nó sẽ rất mạnh ở trong những cái
+[426s] trường hợp anh em mình yêu cầu nó phân
+[428s] tích những cái dữ liệu phức tạp và nhiều
+[431s] cộng với dữ liệu nhiễu rất là khó. Tức
+[433s] là ngang với nhiều chuyên gia trụm đầu
+[435s] và làm việc với nhau. Tôi ví dụ như là
+[438s] chúng ta cần phải thực hiện phân tích
+[439s] những cái điều khoản ẩn ở trong hợp đồng
+[441s] kinh tế hay báo cáo tài chính ở rất
+[442s] nhiều hàng trăm trang chẳng hạn thì đây
+[444s] là thế mạnh của nó. Hay là cái năng lực
+[446s] của nó thì Antrupic là thực hiện một cái
+[448s] demo, một cái video demo là gì ạ? nó sẽ
+[451s] nó sẽ cho cái con Fable 5 này chơi cái
+[456s] game là Pokemon và không cung cấp thêm
+[459s] bất kỳ công cụ hay ngữ cảnh nào khác.
+[461s] Nếu trước đây những cái mô hình trước ấy
+[463s] thì nó phải cung cấp thêm cái trạng thái
+[464s] hoặc là trạng thái của game như thế nào
+[466s] nó phải cung cấp thêm để các mô hình
+[468s] trước nó có thể tự chơi game này. Thì
+[470s] cái ông này ông chẳng cung cấp gì hết.
+[471s] Nó chỉ bật một cái màn hình và cho cái
+[473s] con mô hình này tự nhìn màn hình, tự
+[476s] phân tích tình huống, tự đọc các các
+[477s] đoạn giao lưu này và tự ra quyết định.
+[480s] Và cái con Fable 5 này nó phá đảo được
+[481s] cái game đấy. Tức là nó chứng minh điều
+[483s] gì ạ? Nó chứng minh khả năng suy luận
+[485s] logic của mô hình này rất tốt. Nó chứng
+[488s] minh khả năng nhận diện hình ảnh, tức là
+[490s] đọc hình ảnh, phân tích, đọc hình ảnh
+[492s] này cũng rất tốt. Đó, đấy là ý ý của ông
+[494s] ấy. Và cái không chỉ dừng ở cái việc mà
+[498s] nó chơi game, nhận diện hình ảnh, nó
+[500s] chứng minh được rằng là tôi thực hiện
+[501s] những cái việc như là thiết kế thuốc,
+[503s] tăng tốc thiết kế phần protein này lên
+[504s] 10 lần. Và có nhiều có nhiều sản phẩm mà
+[509s] do AI thiết kế đang được đưa vào cái
+[510s] phòng thí nghiệm để nghiên cứu thuốc
+[511s] điều trị. Đấy nó có ở trên trang chính
+[513s] thống chính thức của Antropic.
+[515s] Ngoài ra nó còn tự chủ nghiên cứu được
+[516s] bộ gen nữa. Tức là nó làm ở nhiều cái
+[519s] phần phần việc khác nhau và có năng lực
+[521s] tốt. Được chưa ạ? Ờ ngoài ra thì ở trên
+[523s] đây trên cái trang của hãng ấy nó có đưa
+[525s] ra một loạt những cái thông số chứng
+[527s] minh rằng là cái mô hình của tôi thì tốt
+[530s] hơn nào tốt hơn các mô hình khác hiện
+[531s] tại. Tôi nói thật với anh em tạm thời
+[533s] các bạn không cần quan tâm. các bạn biết
+[535s] được rằng mô hình nó ngon hơn được chưa
+[537s] ạ? Bởi vì bất kỳ mô hình mới nào đưa ra
+[539s] họ cũng sẽ đều đều đưa ra các số liệu
+[541s] chứng minh nó tốt. Thế tạm thời bạn
+[542s] không cần quan tâm cái đấy đâu. Quan tâm
+[544s] nhớ cái số đấy thì không làm gì bạn chỉ
+[546s] biết là nó tốt hơn được không ạ? Ok. Như
+[548s] vậy anh em biết rằng ok cụ thể anh em
+[550s] hiểu đơn giản là mẹ nó năng lực ngon và
+[552s] tiền nó hiện nay tiền nó thế này. Ok
+[556s] nhưng mà anh em hình dung rằng là trong
+[559s] anh em dùng bất kỳ cái sản phẩm nào như
+[561s] clot này hay là chat cpt chẳng hạn thì
+[563s] nó có hai cơ chế tính tiền đúng không?
+[564s] Cơ chế một cái chơi tính tiền là liên
+[566s] quan đến dùng thuê bao. Tức là anh em
+[568s] mình trả theo tháng cố định thôi. 1
+[570s] tháng ví dụ 100 đô tức là không bao giờ
+[572s] phát sinh ngoài 100 đô thì nó còn một
+[575s] phần nữa đó là một phần ngoài thuê bao.
+[577s] Tức là anh em phải trả trên cái lượng
+[579s] toốc cần chúng ta sử dụng. Đấy có thể sử
+[581s] dụng API chẳng hạn. Đó tức là không dính
+[583s] trong thuê bao. Thì có một thứ ở đây các
+[587s] bạn sẽ sẽ phải quan tâm là chút nữa bạn
+[589s] tôi sẽ chỉnh cho các bạn liên quan đến
+[590s] tiền chỗ này đúng không?
+[592s] Đây tôi sẽ cho bạn xem lưu ý này. Lưu ý
+[594s] này. Đấy lưu ý rằng cái ông mô hình này
+[598s] này nó được miết phí đến 22 tháng 6.
+[600s] Miễn phí này hiểu trên hiểu trên khía
+[603s] cạnh gì? Hiểu trên khía cạnh là nếu anh
+[605s] em đang dùng một thuê bao tô ví dụ bạn
+[607s] dùng bản Clos Max 5X chẳng hạn hay Clot
+[611s] Max 20x chẳng hạn thì bạn có quyền dùng
+[613s] con Fable 5 này mà bạn không phải trả
+[615s] tiền token. Tức là bạn gõ 1 triệu token,
+[618s] bạn không phải trả 10 đô. Bạn chỉ cần
+[619s] trả theo gói thuê bao thôi. Ví dụ 100 đô
+[621s] một tháng là hết bạn không phải trả
+[622s] thêm. Đấy gọi là miễn phí của nó. Nhưng
+[624s] không có nghĩa là bạn dùng không mất
+[626s] tiền. Bạn khi bạn sử dụng Fable 5 này
+[629s] thì nó sẽ mất lượng gọi là lượng token
+[632s] tương đương với hai lần. cái lượng token
+[634s] bình thường của bạn khi bạn dùng đấy.
+[636s] Tức là nó vẫn trừ vào cái hạn mức bạn sử
+[639s] dụng. Ví dụ các hãng đấy là năm ví dụ 5
+[642s] tiếng là cho sử dụng gọi là 100 lần 100
+[644s] triệu token đi. Đấy thì bạn vẫn bị trừ
+[646s] vào cái hạn mức sử dụng đấy. Anh em hình
+[648s] dung không ạ? Chứ không phải là bạn dùng
+[649s] quét vô tư bạn không mất gì. Không phải
+[651s] bạn vẫn bị chạm mức limit đó. Ok. Còn
+[654s] sau ngày 22 tháng 6 thì sao? Sau ngày 22
+[657s] tháng 6 thì cái tiền này nó tiền khi bạn
+[660s] sử dụng cái mô hình Fable 4 5 này nó sẽ
+[662s] tính ở gói gói sử dụng thêm. Tức là giả
+[665s] sử bạn đã mua gói hàng tháng là 100 đô
+[667s] rồi đi được chưa ạ? Gói Maamic là 100 đô
+[669s] rồi. Thì nếu bạn sử dụng Fable 5 này bạn
+[671s] phải trả tiền riêng bên ngoài. Tiền tính
+[673s] thế này. Ok không anh em? Rõ ràng về
+[676s] điều này nhá. Về tiền anh em phải rõ
+[677s] điều đấy. Ok. Và lưu ý thứ hai này là
+[681s] bởi vì anh em còn nhớ không? Cái thằng
+[682s] cái thằng cái cái hãng nói rằng cái mô
+[685s] hình này tao sẽ chặn tao sẽ chặn việc
+[687s] tấn công mạng này. Đấy tao sẽ chặn việc
+[689s] chống trưng cất dữ liệu này. Tạo chế tạo
+[692s] vũ khí hủy diệt này. Thế nên là nó sẽ
+[694s] bảo rằng nó sẽ lưu lck ông trong 30
+[696s] ngày. Không quan trọng khách hàng gì.
+[699s] Không quan trọng. Trước đây tôi đã từng
+[700s] ký cam kết với ông là tôi không lưu lốc.
+[702s] Bây giờ cứ ông nào dùng mô hình face 5
+[704s] của tôi, tôi sẽ lưu ly để tôi check lại
+[706s] xem ông có thực hiện cái hành vi gì đáng
+[709s] ngờ không, định tấn công mạng không, chế
+[710s] tạo vũ khí sinh học không, định chưng
+[712s] cất dữ liệu của tôi không. Đó, đấy là
+[715s] những lưu ý nhá. Và đây thì chúng ta nên
+[717s] dùng cái mô hình này khi nào lúc nào?
+[720s] Thì cái mô hình này nên dùng ở những cái
+[722s] việc giá trị cao và phức tạp. Được chưa
+[725s] ạ? Bởi vì sau này nó sẽ tốn tiền của anh
+[726s] em được chưa ạ? tốn tiền tốn tiền riêng
+[728s] bên ngoài của anh em nên là việc nó phức
+[730s] tạp cộng với giá trị cao. Cụ thể đó là
+[733s] ví dụ như anh em mình phân tích những dữ
+[734s] liệu tài chính có độ nhiễu cao chẳng hạn
+[736s] phân tích rất nhiều báo cáo tài chính từ
+[737s] nhiều nguồn khác nhau để ra quyết định
+[739s] nhưng một quyết định của mình nó mang
+[741s] lại nhiều tiền thì bạn dùng những mô
+[742s] hình thông minh là hoàn toàn xứng đáng
+[744s] đừng tiếp một tí tiền hay bạn muốn lập
+[747s] kế hoạch từ rất nhiều nguồn thông tin
+[748s] quan trọng bạn muốn lấy dữ liệu từ cm
+[752s] bạn lấy dữ liệu từ phân tích từ các
+[753s] thông tin về mạng xã hội. Bạn lấy dữ
+[755s] liệu từ thông tin lock chat khách hàng
+[757s] rất nhiều nguồn khác nhau để bạn lập một
+[759s] cái kế hoạch kinh doanh thì bạn hãy sử
+[761s] dụng bộ não khôn vì kế hoạch đấy lập một
+[763s] lần có giá trị sử dụng nhiều lần thì hãy
+[765s] nên dùng thằng khôn. Ý tôi là như vậy
+[767s] đúng không ạ? Còn các công việc nào
+[769s] triển khai liên tục nhiều lần, làm rất
+[771s] nhiều lần thì bạn không nhất thiết phải
+[773s] dùng ông này đúng không? Vì nó tốn kém
+[774s] về chi phí đấy. Thì có bạn có nhiều giải
+[777s] pháp khác ví dụ như là dùng Opus, dùng
+[779s] Sonet hoặc dùng hau để tùy vào cái cách
+[781s] thức của các bạn
+[783s] đó. Ok. Vậy đây là những gì cần biết.
+[786s] Xong nhớ bốn mục này là ok luôn. Tại đây
+[789s] thì tôi sẽ chuyển sang cái mục là xu
+[790s] hướng. À anh em sẽ thấy là những cái mô
+[793s] hình mới này ra liên tọi. Nhưng mà cái
+[794s] xu hướng đây tôi thấy được là gì? Anh em
+[796s] sẽ thấy là các hiện t hiện nay ấy nó đưa
+[799s] ra một cái thứ là chúng ta chỉ cần hướng
+[801s] tới việc biết rõ mục tiêu và kết quả của
+[804s] mình là gì thôi. Còn cái việc mà trước
+[806s] đây chúng ta có lăn khoăn là làm như thế
+[808s] nào nhỉ? Nó càng ngày nó càng được giào
+[811s] cản càng hạ xuống. Nếu như trước đây bạn
+[813s] có một ý tưởng, bạn muốn mà làm ứng
+[814s] dụng, bạn có một ý tưởng thực hiện công
+[816s] việc gì đấy làm với nhiều nguồn dữ liệu,
+[818s] chọc với để bạn phân tích về chứng khoán
+[820s] chẳng hạn, bạn rất là khó khăn hay bạn
+[822s] muốn tạo một cái phần mềm đấy, bạn rất
+[824s] khó khăn không biết làm. Bây giờ bạn chỉ
+[826s] cần biết mục tiêu thôi. Tại sao tôi lại
+[828s] nói như vậy? Hãy nhìn vào đây,
+[832s] hãy quan sát vào điều này.
+[835s] Tôi sẽ nói về ông Antrupic nếu các bạn
+[836s] sẽ nhìn thấy là Anupic ở trong những
+[838s] tháng gần đây thôi, nó ra một loạt những
+[840s] cái tính năng mới. Thứ nhất là nó ra cái
+[843s] sục gold này. Đấy, sục gold này. Bản
+[845s] chất là gì? Bản chất ở đây là với cái
+[848s] công việc thực hiện tuần tự và bạn biết
+[850s] rõ tiêu chí đầu ra rồi, các bạn có thể
+[852s] chỉ cần một cái xộc gold này và đưa cái
+[855s] yêu cầu tiêu chí đầu ra đấy. Và hệ thống
+[857s] nó sẽ làm cho đến khi đạt yêu cầu thì
+[860s] thôi. Nó sẽ tự đẻ ra những cái ông sub
+[864s] agent đấy. Asient subent nó sử dụng là
+[866s] model 2Q để kiểm tra lại kết quả xem đã
+[869s] đúng cái yêu cầu của bạn chưa. Bạn không
+[871s] cần yêu cầu cái liên quan cái tiến trình
+[873s] giữa chi tiết không quan tâm. nó sẽ làm
+[875s] lặp lại đến khi nào xong thì thôi. Ok.
+[879s] Sau đó và nếu mà anh em thấy cuối cái ờ
+[882s] cách đây khoảng khoảng gần hai tuần đây
+[885s] khoảng gần hai tuần tức là cuối tháng
+[886s] năm thì khi mà ra mô hình opus 4.8 ấy
+[889s] thì Antropic là giới thiệu cái tính năng
+[891s] là dynamic workfollow. Dynamic
+[893s] workfollow đó là bản chất là gì? Khi bạn
+[895s] ra một cái yêu cầu và làm việc khối
+[897s] lượng rất lớn thì ông ông ông Clot ấy nó
+[900s] tự động lên kế hoạch và tự động đẻ ra
+[903s] rất nhiều cái sub agent con. Nó giống
+[906s] việc chúng ta cần chuyển nhà đấy. Một
+[907s] một cái biệt thự chúng ta giao việc cho
+[909s] thuê một ông đúng không? Ông ông ông
+[912s] nhận việc tôi ra ông chuyển xong cái
+[913s] biệt thự của tôi chuyển thế nào chuyển.
+[915s] Thì cái ông ấy ông tự lên kế hoạch ông
+[917s] ấy tự động thuê hàng trăm người nhân
+[918s] công về thực hiện đó và nó chạy parel
+[921s] liên tục liên tục đến khi xong việc của
+[923s] mình chạy par leo với công việc rất lớn.
+[926s] Đây rõ ràng ở đây chúng ta cũng chỉ cần
+[928s] biết là quan trọng kết quả cuối cùng
+[929s] thôi. Và đến cái mục thứ ba ở đây em
+[933s] thấy sự xuất phát hiện của mô hình mới
+[934s] ra mới liên tục. Opus 4.8 ra mắt vào 28
+[938s] tháng 5. Hiện nay là clot fable 5 ra mắt
+[941s] vào mùng 9 tháng 6. Tức là chưa đầy hai
+[944s] tuần giao hai mô hình rất thông minh.
+[946s] Chuyện gì đang xảy ra? Như vậy bạn thấy
+[948s] rằng chúng ta đã ngày càng có một bộ não
+[950s] rất giỏi, phân tích được, lập luận được,
+[953s] thực hiện công việc được, chọc vào các
+[954s] hệ thống của bạn làm việc được. Được
+[956s] chưa ạ? Nó chỉ bây giờ chúng ta lại có
+[959s] cách thức là gì ạ? Nó chỉ là chỉ cần đặt
+[961s] mục tiêu thôi để làm kết quả. Ờ khối
+[963s] lượng lớn không sao, nó tự động thực
+[965s] hiện tách thành các subent nhỏ thực
+[967s] hiện. Rõ ràng là gì ạ? Bạn chỉ cần biết
+[970s] mục tiêu thôi, phần còn lại càng ngày
+[972s] bạn càng không quan trọng. Bạn càng biết
+[974s] rõ mục tiêu là đủ. Bạn không cần biết
+[976s] cái đoạn chi tiết ở giữa ta làm như thế
+[978s] cho nào. Chưa cần thiết. Và tất nhiên
+[980s] bạn chỉ cần trả tiền cho cho hãng thôi
+[982s] là nó sẽ làm được. Trước đây bạn phải đi
+[984s] thuê người làm rất phức tạp đúng không?
+[985s] Bây giờ không cần nữa. Đấy bạn phải hiểu
+[987s] bản chất xu hướng là như vậy. Và cái xu
+[989s] hướng này không chỉ có Anupic các hãng
+[991s] khác họ cũng đã làm. Ví dụ ở Open AI nó
+[994s] có tương tự luôn nó có suộc gold tương
+[996s] tự luôn. Các hãng họ đang làm như thế.
+[999s] Và anh em sẽ thấy là cái xu hướng này nó
+[1001s] dẫn ra việc gì ạ? là nếu như chúng ta là
+[1004s] một người không vấn đề, không có
+[1005s] background về tex, không làm sao cả,
+[1007s] background về công nghệ không phải vấn
+[1009s] đề, bạn không phải lập trình viên cũng
+[1011s] không phải vấn đề luôn nhưng bạn cần
+[1013s] biết rõ cái đích đến của mình. Nhưng mà
+[1015s] đích đến thì nếu anh em là người chuyên
+[1016s] môn, ví dụ bạn làm trong ngành về
+[1019s] logistic, bạn trong ngành về du lịch,
+[1020s] bạn trong bán lẻ, bạn rất [hắng giọng]
+[1022s] hiểu cái đích đến rồi thì xong xong
+[1024s] luôn. Nếu anh em đây anh em có thể hỏi
+[1027s] em dùng cái suộc gold này xuộc dynamic
+[1028s] work follow thế nào? Tôi có thể ví dụ
+[1030s] cho anh em được chưa ạ? Ngay trong cái
+[1031s] bài toán kinh doanh của tôi thì thế này
+[1033s] thì tôi có hai mảng về kinh doanh. Tôi
+[1036s] có làm B2B là tôi đến tôi tư vấn cho các
+[1039s] doanh nghiệp. Tôi ví dụ một cái doanh
+[1040s] nghiệp bạn làm về du lịch đi, bạn muốn
+[1043s] bạn không có độ công nghệ, bạn muốn ờ áp
+[1046s] dụng làm sao đưa AI vào trong cái công
+[1048s] việc của bạn để bạn biến thành một cái
+[1050s] doanh nghiệp mà người kết hợp AI để bạn
+[1051s] phát triển. Tôi đến tôi tư vấn cho anh
+[1053s] em tức là B2B. Tôi làm B2C là gì ạ? tôi
+[1056s] coaching huấn luyện cho những cái anh em
+[1058s] ví dụ như quản lý này, chủ doanh nghiệp
+[1060s] này, những cái người làm về về là về
+[1063s] chuyên môn tức là bạn không phải kỹ
+[1065s] thuật tất cả đấy là không có background
+[1066s] về tex thì làm sao tôi có thể có năng
+[1068s] lực làm việc aentic mà không bị phụ
+[1070s] thuộc vào tool, không bị hoang mang vào
+[1072s] tool thì tôi cố vấn cho họ. Đấy tôi có
+[1073s] hai phần tư vấn đào tạo cho doanh nghiệp
+[1075s] hoặc cho cá nhân. Thì làm thế nào tôi
+[1077s] làm được công việc của tôi? Thì về mặt
+[1080s] bản chất thì tôi có phải phân tích được
+[1082s] là tệp khách hàng của tôi họ cần gì để
+[1083s] tôi thiết kế sản phẩm đúng không?
+[1085s] đúng không? Hay là để tôi cung ứng sản
+[1086s] phẩm cho họ đúng không? Và tôi có rất
+[1088s] nhiều nguồn khác nhau. Tôi có rất nhiều
+[1090s] nguồn dữ liệu trên kênh YouTube của tôi
+[1091s] này. Tôi có nguồn dữ liệu ở trên Linkin
+[1093s] của tôi này. Tôi có nguồn dữ liệu trên
+[1095s] các mạng xã hội này. Ví dụ các câu hỏi
+[1096s] của họ, các bình luận của họ đều là vàng
+[1098s] hết. Được chưa ạ? Tôi có thông tin ở
+[1100s] trong Côi. Được chưa ạ? Tôi có thông tin
+[1103s] ở trong database của tôi, các file dữ
+[1104s] liệu của tôi. Tôi có hàng chục hàng trăm
+[1106s] các buổi tôi thực hiện Zoom và trong
+[1108s] buổi Zoom đấy có nhiều người tham dự.
+[1110s] Tôi có để lại phần bình luận cái buổi
+[1111s] Zoom này. Các câu hỏi trước bình luận
+[1112s] này tôi có rất nhiều nguồn dữ liệu khác
+[1114s] nhau và tôi có thể thực hiện phân tích
+[1117s] được chưa ạ? Và tôi sẽ demo cho anh em
+[1118s] là tôi sẽ dùng cái suc gold hay dynamic
+[1120s] workflow này để làm như thế nào đúng
+[1122s] không ạ? Tôi chia sẻ anh em cách là anh
+[1124s] em làm nhá. Ví dụ rất là đơn giản thôi.
+[1125s] Bạn không cần cài tool toy gì hết. Ví dụ
+[1127s] bạn trên Windows chẳng hạn bạn gõ clot
+[1129s] đấy. Ví dụ thế gõ clot đây. Nếu mà anh
+[1132s] em mình mà muốn thực hiện cái gold ấy.
+[1135s] Đây nếu mà anh em muốn sử dụng Fable 5
+[1137s] này được chưa? Anh em chỉ đơn giản thôi,
+[1138s] xộc model anh em xộc model một cái.
+[1141s] Đấy và anh em mình sẽ ấn xuống chọn
+[1143s] faceble 5 thì anh em sẽ biết là ok bây
+[1146s] giờ tôi sẽ chạy bằng cái mô hình face 5.
+[1149s] Đơn giản rất đơn giản đúng không ạ? Bây
+[1151s] giờ chúng ta sử dụng cái mô hình thông
+[1152s] minh rồi nhá. Và bây giờ tôi muốn ờ chạy
+[1155s] một cái đặt một cái mục tiêu nó tự làm
+[1157s] thì làm như thế nào? Em gõ xuộc gold rất
+[1160s] đơn giản đúng không? Sau đó là bài toán
+[1162s] của anh em mình vớn bài toán đây. Mục
+[1163s] tiêu ở đây
+[1165s] và enter cho nó chạy thì tôi đã chạy một
+[1167s] bài toán rồi cho anh em. Tôi cho anh em
+[1168s] xem nó chạy thực tế nhá. Đấy anh em gõ
+[1170s] bài toán đ thôi rồi enter. Rất đơn giản
+[1172s] đúng không? Đây hay bài toán tôi này.
+[1175s] Xuộc côn mục tiêu. Tôi muốn phát hiện
+[1177s] thêm một hai phân túc một hai phân khúc
+[1179s] khách hàng tiềm năng của tôi mà đang bị
+[1180s] bỏ lỡ. Tức là ờ họ đang tương tác rất là
+[1183s] cao nhưng mà tôi đã chưa chuyển đổi
+[1184s] được. Được chưa? Có rất cái bài toán này
+[1186s] có thể gặp ở nhiều ngoành nghề. Các bạn
+[1187s] có thể tạo thêm nhiều doanh thu cho
+[1189s] doanh nghiệp của mình đó. Thì tôi có
+[1192s] nguồn là gì? Tôi cho nó biết nguồn của
+[1193s] tôi từ lag là C này, từ Socal này, từ
+[1196s] YouTube này, từ những cái file dữ liệu
+[1197s] của tôi này. Đấy. Hoặc tôi có thể lấy
+[1199s] thêm thông tin trên Zoom này. Viết vào
+[1201s] bạn đưa cho cái tiêu chí hoàn thành là
+[1203s] gì? Bạn viết ra tiêu chí hoàn thành là
+[1205s] thứ nhất ông phải quét tất cả các nguồn
+[1206s] này. Ông phải phân tích cho tôi này. Ông
+[1208s] phải tuyên bố có bằng chứng nguồn lấy ở
+[1210s] đâu này. Đấy, đánh giá tôi. Tức là anh
+[1212s] đấy anh em phải viết càng rõ tiêu chí
+[1213s] hoàn thành ra. Đấy, sau đấy thì anh em
+[1217s] sẽ thấy ok tôi nó sẽ đi phân tích. Đấy
+[1220s] nó sẽ đi phân tích cho mình. Nó tự viết,
+[1221s] nó tự thực hiện công việc. Nó tự thực
+[1223s] hiện viết lệnh, nó tự làm tất cả mọi thứ
+[1225s] này. Nó tự làm tất cả mọi thứ anh em nhớ
+[1227s] không? Nó cứ làm cho đến khi nó xong thì
+[1230s] thôi. Nó cứ làm cần mẫn cần mẫn xong thì
+[1232s] thôi. Xong thì thôi. Đấy được chưa? Đấy
+[1235s] thì đây là cách mà sộc gold thực hiện.
+[1237s] Anh em có thể thực hiện nó là phân tích
+[1239s] thức cần mẫn làm. Ok. Cách thức đó. Vậy
+[1243s] thì trong trường hợp anh em mình muốn sử
+[1244s] dụng dynamic work follow thế nào? Được
+[1246s] chưa ạ? Muốn sử dụng dynamic follow thì
+[1249s] anh em mình ấn se effort này. S effort
+[1252s] này. Được chưa? Đấy. Hoặc là anh ch em
+[1255s] chuyển lên cái phần đây x2 đấy. Em kéo
+[1258s] em kéo vào đây. Hoặc là trong cái đề bài
+[1261s] của anh em mình anh em mình sẽ thực hiện
+[1263s] đề bài và có chữ dynamic workflow.
+[1267s] Ờ cụ thể nhá. Tức là trong cái yêu cầu
+[1268s] của mình mình có chữ dynamic workflow.
+[1271s] Thì tôi ví dụ cho anh em xem. Tôi có một
+[1273s] nhiệm vụ yêu cầu nó là gì ạ? tổng hợp
+[1275s] các bình luận trên YouTube, toàn bộ các
+[1277s] YouTube của tôi trong 10 video gần nhất.
+[1279s] Đấy, các câu hỏi thảo luận trong 30 buổi
+[1281s] Zoom gần nhất của tôi, tôi có làm rất
+[1282s] nhiều buổi Zoom và có AI nó phân tích
+[1284s] nó. Tôi cần phải check thông tin học
+[1286s] viên ở trên cái CIM của tôi, tức một cái
+[1288s] cơ sở dữ liệu lưu giữ khách hàng của
+[1290s] tôi. Ờ tôi muốn bóc tách tất cả này
+[1292s] thành về nội dung để tôi sale, bán hàng
+[1296s] đấy và thực hiện công việc với Dynamic
+[1298s] workflow. Đấy, tôi thực hiện cho nó đây.
+[1301s] Thì nó thực hiện check tất cả cái công
+[1303s] việc của tôi nó sẽ làm. Bóc tách, bóc
+[1305s] tách làm, bóc tách làm. Đó,
+[1308s] được không ạ? Đây thì cái nó sẽ tự động
+[1311s] ờ đẻ ra bao nhiêu agent là nó sẽ tự làm.
+[1313s] Em tạo ra bao nhiêu agent nó sẽ làm
+[1315s] luôn. Ok anh em. Thì đây là cách thức.
+[1319s] Thì thì chúng ta không cần quan tâm ông
+[1320s] viết cái lệnh gì ông phân tích. Tôi
+[1321s] không quan tâm. Tôi không cần quan tâm à
+[1323s] cái việc mà ông sau khi đấy ông bóc tách
+[1325s] thế nào. Miễn đạt được mục tiêu của tôi
+[1326s] là được. Được ạ. Và công việc của mình
+[1328s] là đưa thằng AI đấy kết nối vào cái
+[1330s] nguồn dữ liệu của mình thôi. Rất là đơn
+[1331s] giản. Vậy đúc kết ở đây là gì? Đúc kết ở
+[1334s] đây tôi muốn nói rằng cái rào cản về cái
+[1337s] việc làm chi tiết ở giữa thế nào đang
+[1339s] giảm xuống rất là nhiều rồi. Và đây là
+[1341s] cơ hội lớn ờ cho những cái đơn vị cá
+[1344s] nhân hoặc là doanh nghiệp mà bạn không
+[1346s] có đội ngũ tech. Và thực sự để mang lại
+[1349s] lợi ích cho doanh nghiệp, mang lại tiền
+[1350s] cơ hội doanh nghiệp thì nó nằm rất lớn ở
+[1352s] đội ngũ Ntech. Bởi vì họ biết về
+[1354s] marketing, họ biết về kinh doanh, bạn
+[1356s] hiểu về khách hàng được chưa ạ? Họ chỉ
+[1358s] cần nhưng mà trước đây họ có rào cản là
+[1361s] không biết cái đoạn ở giữa. Và nếu bạn
+[1363s] cứ phụ thuộc đoạn ở giữa đấy, bạn phải
+[1364s] nhờ một đội kỹ thuật đấy thì thời gian
+[1366s] phối hợp rất là lâu, bạn bỏ lỡ cội kinh
+[1368s] doanh. Nhưng mà cái xu hướng ở đây là
+[1370s] bạn chỉ cần biết kết quả thôi thì nó rất
+[1372s] là lợi hại luôn cho anh em. Đó, đấy là
+[1375s] đúc kết. Được chưa ạ?
+[1378s] Vậy thì doanh nghiệp sẽ thay đổi như thế
+[1379s] nào?
+[1380s] Theo tôi đây là ba thứ sẽ thay đổi trong
+[1383s] doanh nghiệp. Và nếu anh em đặc biệt các
+[1385s] bạn là những doanh nghiệp mà chưa có độ
+[1388s] kỹ thuật, không lợi thế về công nghệ kỹ
+[1389s] thuật thì bạn hãy nên xem kỹ phần này vì
+[1391s] nó có thể thay đổi rất lớn trong cách
+[1393s] bạn làm việc. Bạn ấy tạo ra rất nhiều
+[1394s] hiệu quả.
+[1396s] Thứ nhất là bạn sẽ thay đổi về một cái
+[1398s] mô hình nhân lực. Mô hình nhân lực tức
+[1400s] là thế nào? Trước đây ờ đa phần cái nhân
+[1404s] sự của chúng ta bản chất là người đúng
+[1405s] không? Được chưa? Và nh là người nếu bạn
+[1407s] muốn đào tạo được một người có thể hiểu
+[1409s] và làm được kết quả rất là lâu. Tức là
+[1411s] cái kết quả trước đây ấy bản chất là
+[1413s] bằng với người có năng lực. Được chưa ạ?
+[1416s] Muốn tạo ra kết quả phải có người có
+[1417s] năng lực. Đó và cái thời gian đào tạo
+[1420s] cho người này thì cực kỳ lâu. Nếu không
+[1422s] đào tạo mà tuyển một ông giỏi thì cũng
+[1423s] rất là khó. Ví dụ một cái doanh nghiệp
+[1426s] các bạn ở địa phương, bạn đang ở bạn
+[1428s] đang ở Nam Định đi, bạn đang bị ở ở Hà
+[1430s] Nam đi, bạn muốn tuyển một người, những
+[1432s] người giỏi nó không thể dễ bằng bạn đang
+[1434s] ở Hà Nội Hồ Chí Minh. Đấy là điều đương
+[1435s] nhiên đúng không ạ? Bạn ở khu công
+[1437s] nghiệp, bạn muốn tuyển người giỏi nó bạn
+[1439s] vẫn có thể tuyển được nếu có lương các
+[1440s] thứ nhưng không thể bằng bạn ở Hà Nội ở
+[1442s] thành phố lớn được Đà Nẵng được. Đó và
+[1445s] trước đây nếu mà làm được một việc mà
+[1447s] kết quả mà ngon thì thông thường một
+[1448s] người đào tạo mất được khoảng 2 năm 3
+[1450s] năm. Nhưng mà phương án mới là gì ạ?
+[1451s] Phương án mới bây giờ là bạn biết không?
+[1454s] Bây giờ cái mô hình anh ai rất là thông
+[1455s] minh và các mô hình đấy nó có thể đọc
+[1457s] hiểu các tài liệu quy trình của anh em
+[1459s] thoải mái. Được chưa ạ? Vậy thì nếu như
+[1461s] có một người mới vào game, kết quả bây
+[1463s] giờ không bằng mỗi người nữa, kết quả
+[1465s] bây giờ bằng với nhân sự cộng agent. Mà
+[1467s] Asian nó rất giỏi rồi. A nó có thể bù
+[1471s] đắp cho cái sự chưa hiểu biết của nhân
+[1473s] sự. Bản chất một một ngành tại sao họ
+[1476s] làm được? Một ngành muốn làm được bản
+[1478s] chất bởi vì cái người đấy trải qua nhiều
+[1480s] dự án họ hiểu được các thuật ngữ của
+[1481s] ngành, họ va chạm các các công việc, các
+[1484s] tình huống của ngành thì tất cả phần đấy
+[1486s] bây giờ Asian nó sẽ làm được chưa ạ? và
+[1488s] nó bù lắp cho nhân sự. Như vậy bạn có
+[1490s] thể có một nhân sự chỉ có 6 tháng kinh
+[1492s] nghiệm nhưng cộng agent bạn có thể làm
+[1494s] tiệm cận công việc với một nhân sự 3 năm
+[1496s] kinh nghiệm là hoàn toàn khả thi và thời
+[1497s] gian ngắn hơn. Được chưa ạ? Vậy bạn cũng
+[1499s] không gặp khó khăn cái việc mà vị nhân
+[1501s] sự ở nơi xa về nữa. Bạn có thể tuyển
+[1503s] người ở trong địa phương để làm việc
+[1505s] cũng hoàn toàn được luôn. Đó mô hình
+[1507s] nhân sự thay đổi và mô hình này tạo ra
+[1509s] nhiều cơ hội cho anh em chúng ta có
+[1511s] nhiều lựa chọn hơn. Cái thứ hai đây thì
+[1514s] thì là góc nhìn bởi vì cái mục tiêu bạn
+[1516s] không? Cái mục tiêu là ai hiểu kết quả
+[1518s] người đấy sẽ làm được rất là ok chứ
+[1521s] không phải là ông biết kỹ thuật nhá. Một
+[1523s] ông biết lập trình, biết công nghệ, biết
+[1524s] về AI không thể nào tạo được kết quả
+[1527s] vượt trội được. Được chưa ạ? Nó không
+[1529s] thể bằng một người rất hiểu ngành. Nếu
+[1531s] như một người các bạn hiểu rõ ngành kinh
+[1533s] doanh của bạn, bạn chỉ cần hiểu cái gia
+[1535s] quyết định mô tả ngữ cảnh cho AI thôi
+[1538s] hoặc bạn ờ bạn biết cách đưa mô tả thật
+[1541s] rõ cái đề bài cho ai thôi thì cái việc
+[1543s] của bạn tạo ra là cũng rất hiệu quả.
+[1547s] Được chưa ạ? Nó không phải là bài toán
+[1548s] của vấn đề người hiểu công nghệ nữa rồi
+[1549s] mà là người hiểu ngành. Nên tất cả anh
+[1551s] em bạn muốn làm trong bất kỳ cái lĩnh
+[1553s] vực nào mà bạn chưa có có quá mạnh công
+[1555s] nghệ không phải vấn đề nữa. Giào cản hạ
+[1557s] xuống rất thấp rồi anh em. Rất thấp rồi.
+[1559s] Cái phần thứ ba đây là gì ạ? Là doanh
+[1561s] nghiệp được nâng cấp vượt trội. Doanh
+[1563s] nghiệp được nâng cấp tức là thế nào? Nếu
+[1565s] trước đây bạn chỉ nghĩ rằng là ô tôi cố
+[1567s] gắng tôi làm nhiều hơn để tôi kiếm nhiều
+[1568s] khách hàng đạ thì tại đây bạn có thể có
+[1571s] những cái thứ là gì ạ? Bạn có thể tạo ra
+[1574s] rất nhiều thứ mà trong người bạn không
+[1575s] nghĩ đến. Tôi ví dụ bạn có thể tạo ra
+[1577s] trải nghiệm khách hàng mới, bạn thể tư
+[1579s] duy tìm cho sản phẩm mới luôn. Tức là
+[1581s] chỉ cần một cái ý tưởng này thành công,
+[1583s] bạn có thể tạo ra bước nhảy vọt trong
+[1584s] doanh nghiệp của mình. Tại sao bạn có
+[1586s] thể làm được những điều này? Bởi vì AI
+[1589s] nó nâng cấp cho chúng ta về khả năng tư
+[1591s] duy. AI cộng người lãnh đạo có thể cho
+[1593s] chúng ta những cái tư duy mới. Được chưa
+[1596s] ạ? AI cộng với nhân sự quản lý, AI cộng
+[1598s] nhân sự thực hiện công việc nó có thể
+[1600s] cho chúng ta cách làm việc mới và bản
+[1602s] chất là nó tăng năng suất lên. tăng năng
+[1604s] suất của cả công ty lên. Đôi khi nó
+[1606s] không tăng người đâu hoặc thậm chí là
+[1608s] giảm người. Được chưa ạ? Bởi vì nó cắt
+[1610s] được những cái khâu mà trước đây ví dụ
+[1612s] nếu anh em mình làm ở doanh nghiệp có ở
+[1613s] rất là nhiều bước khác nhau chẳng hạn
+[1615s] thì mỗi cái bước ví dụ một bạn có lập kế
+[1618s] hoạch một bản kế hoạch kinh doanh đ bạn
+[1620s] ờ bạn ờ đơn giản là bạn muốn có một cái
+[1622s] báo cáo về phân tích lấy từ nhiều nguồn
+[1624s] bạn phải chuyển sang một cái một cái bộ
+[1625s] nhân sự bạn nhân sự bạn ấy thực hiện lên
+[1628s] cái báo cáo DAS cho bạn mất khoảng mấy
+[1630s] tiếng hai tiếng hoặc một ngày. Bây giờ
+[1632s] nếu đưa Asient vào nó có thể thực hiện
+[1634s] việc đấy trong vòng 5 phút 7 phút. Thậm
+[1636s] chí agent có thể cùng anh em phân tích
+[1638s] và chỉ ra những cái inside gì trong cái
+[1641s] báo cáo đấy, đề xuất quyết định gì nó có
+[1643s] thể làm được luôn. Thậm chí bây giờ ờ
+[1646s] cái việc Asient này nó tăng nó tăng hiệu
+[1648s] quả của người quản lý, nó tăng hiệu quả
+[1649s] người cấp trung và tăng năng lực của cái
+[1651s] anh em thực thi thì toàn bộ cái công ty
+[1654s] anh em được nâng cấp một cách vượt dội.
+[1656s] Đó thì đây là lý do tại sao tôi nói rằng
+[1658s] doanh nghiệp sẽ thay đổi rất lớn nếu bạn
+[1660s] biết cách áp dụng AI. Và nếu bạn chọn
+[1662s] đúng con đường thì anh em nhìn thấy dung
+[1664s] nhìn dung không? Trong vòng có khoảng
+[1666s] hai tuần thì ông Antropic ra liên tục.
+[1669s] Hai mô hình đều rất mạnh. Opus 4.8 rất
+[1671s] mạnh nhá. Và bây giờ là face 5. Nếu bạn
+[1674s] chọn đúng thôi, bạn chọn đúng toàn bộ mô
+[1676s] hình này thôi thì các hãng ngày càng
+[1678s] nâng cấp thì chúng ta nghiễm nhiên được
+[1679s] nâng cấp lên. Đó giống như chúng ta có
+[1681s] một nhân sự AI và nhân sự đấy giỏi lên
+[1683s] liên tục, có thằng khác nâng cấp hộ não
+[1685s] thì đây là cách mà tại tôi tại sao tôi
+[1687s] nói rằng doanh nghiệp sẽ thay đổi rất
+[1688s] lớn và đây là thứ các bạn nên quan tâm.
+[1690s] Được chưa ạ? Ok anh em. Đây là toàn bộ
+[1693s] cái những cái nội dung mà tôi muốn chia
+[1695s] sẻ cho anh em liên quan đến việc CL
+[1697s] Fable 5 và Clos Mos ra đời. Ok. Ờ nếu
+[1701s] anh em có bất kỳ cái câu hỏi hoặc điều
+[1703s] gì đó muốn thảo luận, các bạn có thể để
+[1704s] lại bình luận cho tôi. Và nếu như bạn là
+[1707s] một cá nhân, bạn muốn ở bạn làm những
+[1709s] quản lý này, chủ doanh nghiệp này hay
+[1711s] các bạn những người làm nghề mà không có
+[1712s] background kỹ thuật, các bạn muốn xây
+[1714s] dựng cái hành trình AGtic AI này mà cảm
+[1716s] giác tự tin mình làm được việc thì các
+[1718s] bạn có thể tham dự chương trình Coaching
+[1719s] cùng tôi. Hoặc nếu bạn là chủ doanh
+[1721s] nghiệp mà bạn muốn có ai đó tư vấn cố
+[1724s] vấn cho các việc bạn doanh nghiệp bạn áp
+[1726s] dụng về aentic AI hiệu quả bạn cũng có
+[1728s] thể làm việc với tôi nếu bạn thấy phù
+[1730s] hợp. Ok anh em các bạn có thể xem cái
+[1731s] thông tin này ở phần bình luận nhá. Xin
+[1733s] chào anh em, hẹn gặp anh em ở video tiếp
+[1735s] theo. Xin bye bye anh em. H
