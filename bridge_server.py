@@ -20,13 +20,10 @@ def create_job(context, topic):
     d = JOBS / job_id
     d.mkdir(parents=True, exist_ok=True)
 
-    (d / "context.txt").write_text(context, encoding="utf-8")
-    (d / "topic.txt").write_text(topic, encoding="utf-8")
-
     req = {
         "job_id": job_id,
-        "context_file": "context.txt",
-        "topic_file": "topic.txt",
+        "context": context,
+        "topic": topic,
         "output_file": "output.json"
     }
 
