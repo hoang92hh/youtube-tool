@@ -37,6 +37,22 @@ class App:
         self.skill_path = None
         self.chatgpt_web_data = None
 
+        folder_frame = tk.Frame(root)
+        folder_frame.pack(fill="x", padx=12, pady=4)
+
+        tk.Label(folder_frame, text="Thư mục lưu:").pack(side="left")
+
+        self.default_folder_label = tk.Label(
+            folder_frame,
+            text="(chưa chọn — sẽ hỏi khi lưu)",
+            fg="#888"
+        )
+        self.default_folder_label.pack(side="left", padx=8)
+        tk.Button(
+            folder_frame,
+            text="📁 Chọn thư mục",
+            command=self.choose_default_folder
+        ).pack(side="right")
 
         # ============================================================
         # OPENAI API
@@ -235,6 +251,7 @@ class App:
     def _show_chatgpt_result(self,df,csv_text):
         self.result.delete("1.0","end"); self.result.insert("1.0",csv_text)
         self.status.set(f"ChatGPT Web: Done — {len(df)} scenes")
+        self._auto_export({"scenes": df.to_dict(orient="records")})
 
     def process(self):
         reference = self.reference.get("1.0", "end").strip()
@@ -264,6 +281,7 @@ class App:
             self.status.set("Processing...")
             self.root.update_idletasks()
 
+            # NEW
             self.data = run_workflow(
                 reference,
                 topic,
@@ -275,6 +293,7 @@ class App:
             self.status.set(
                 f"Done - {len(self.data['scenes'])} scenes"
             )
+            # self._auto_export(self.data)
 
         except Exception as exc:
             self.status.set("Error")
@@ -284,8 +303,13 @@ class App:
         self.status.set(text)
         self.root.update_idletasks()
 
+    # NEW
     def export(self):
-        if not self.data:
+        if self.data is not None:
+            export_data = self.data
+        elif self.chatgpt_web_data is not None:
+            export_data = {"scenes": self.chatgpt_web_data.to_dict(orient="records")}
+        else:
             messagebox.showwarning("Export", "Chưa có kết quả.")
             return
 
@@ -302,9 +326,21 @@ class App:
         if not path:
             return
 
-        write_excel(self.data, path)
+        write_excel(export_data, path)
         messagebox.showinfo("Export", f"Đã lưu: {path}")
 
+    # NEW
+    def _auto_export(self, export_data):
+        folder = self.default_folder or str(BASE_DIR)
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"result_{timestamp}.xlsx"
+        path = str(Path(folder) / filename)
+
+        try:
+            write_excel(export_data, path)
+            self.status.set(f"Đã tự động lưu: {path}")
+        except Exception as exc:
+            messagebox.showerror("Auto Export", str(exc))
 
 if __name__ == "__main__":
     root = tk.Tk()
