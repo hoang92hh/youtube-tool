@@ -106,6 +106,12 @@ class App:
             command=self.process
         ).pack(pady=6)
 
+        tk.Button(
+            root,
+            text="CHECK_PROJECT",
+            command=self.check_project
+        ).pack(pady=6)
+
         self.chatgpt_web_btn = tk.Button(
             root,
             text="PROCESS_WITH_CHATGPT_WEB",
@@ -168,6 +174,16 @@ class App:
         "error": "Lỗi.",
     }
 
+    # NEW
+    def check_project(self):
+        try:
+            start_server()
+            create_job("CHECK_PROJECT", "PROJECT")
+            print("Đang chạy function Check project")
+
+        except Exception as exc:
+            messagebox.showerror("Check Project", str(exc))
+
     def process_chatgpt_web(self):
         context = self.reference.get("1.0", "end").strip()
         topic = self.topic.get().strip()
@@ -180,6 +196,7 @@ class App:
             job_id = create_job(context=context,topic=topic)
             self.status.set(f"ChatGPT Web: waiting — {job_id}" )
             threading.Thread(target=self._wait_chatgpt_result,args=(job_id,),daemon=True).start()
+            print("Đang chạy function Process ChatGPT Web")
 
         except Exception as exc:
             messagebox.showerror("ChatGPT Web", str(exc))

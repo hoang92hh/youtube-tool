@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parent
 JOBS = ROOT / "jobs"
 JOBS.mkdir(exist_ok=True)
 
-_pending = None
+_pending = []
 _lock = threading.Lock()
 _server = None
 
@@ -33,17 +33,15 @@ def create_job(context, topic):
     )
 
     with _lock:
-        _pending = job_id
+        _pending.append(job_id)
 
     return job_id
 
 
+# NEW
 def get_job():
-    global _pending
-
     with _lock:
-        job_id = _pending
-        _pending = None
+        job_id = _pending.pop(0) if _pending else None
 
     if not job_id:
         return None
