@@ -12,11 +12,8 @@ import requests
 import pandas as pd
 from datetime import datetime, timezone
 from youtube_transcript_api import YouTubeTranscriptApi
-from youtube_transcript_api._errors import (
-    TranscriptsDisabled,
-    NoTranscriptFound,
-    VideoUnavailable,
-)
+from youtube_transcript_api._errors import (    TranscriptsDisabled,    NoTranscriptFound,    VideoUnavailable,)
+
 
 BASE_URL = "https://www.googleapis.com/youtube/v3"
 CONFIG_FILE = os.path.join(os.path.expanduser("~"), ".yt_research_config.json")

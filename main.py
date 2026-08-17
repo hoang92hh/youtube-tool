@@ -7,7 +7,7 @@ from datetime import datetime
 from workflow import run_workflow
 from excel_writer import write_excel
 from bridge_server import start_server, create_job, wait_for_result
-import time
+import re
 
 import threading
 
@@ -57,38 +57,53 @@ class App:
         # ============================================================
         # OPENAI API
         # ============================================================
-        tk.Label(
-            root,
-            text="OpenAI API",
-            font=("Arial", 11, "bold")
-        ).pack(anchor="w", padx=12, pady=(12, 4))
+        # tk.Label(
+        #     root,
+        #     text="OpenAI API",
+        #     font=("Arial", 11, "bold")
+        # ).pack(anchor="w", padx=12, pady=(12, 4))
+        #
+        # openai_frame = tk.Frame(root)
+        # openai_frame.pack(fill="x", padx=12, pady=4)
+        #
+        # tk.Label(openai_frame, text="API Key:").pack(side="left")
+        #
+        # self.openai_key_entry = tk.Entry(openai_frame, show="*")
+        # self.openai_key_entry.pack(side="left", fill="x", expand=True, padx=8)
+        #
+        # tk.Label(openai_frame, text="Model:").pack(side="left")
+        #
+        # self.model_var = tk.StringVar(value="gpt-5.6")
+        # self.model_box = ttk.Combobox(
+        #     openai_frame,
+        #     textvariable=self.model_var,
+        #     width=24,
+        #     values=(
+        #         "gpt-5.6",
+        #         "gpt-5.6-mini",
+        #         "gpt-5.6-nano",
+        #     ),
+        # )
+        # self.model_box.pack(side="left", padx=8)
+        #
+        # ttk.Separator(root, orient="horizontal").pack(
+        #     fill="x", padx=12, pady=8
+        # )
 
-        openai_frame = tk.Frame(root)
-        openai_frame.pack(fill="x", padx=12, pady=4)
+        transcript_frame = tk.Frame(root)
+        transcript_frame.pack(fill="x", padx=12, pady=6)
 
-        tk.Label(openai_frame, text="API Key:").pack(side="left")
+        tk.Label(transcript_frame, text="Video URL / ID:").pack(side="left")
 
-        self.openai_key_entry = tk.Entry(openai_frame, show="*")
-        self.openai_key_entry.pack(side="left", fill="x", expand=True, padx=8)
+        self.transcript_entry = tk.Entry(transcript_frame)
+        self.transcript_entry.pack(side="left", fill="x", expand=True, padx=8)
 
-        tk.Label(openai_frame, text="Model:").pack(side="left")
-
-        self.model_var = tk.StringVar(value="gpt-5.6")
-        self.model_box = ttk.Combobox(
-            openai_frame,
-            textvariable=self.model_var,
-            width=24,
-            values=(
-                "gpt-5.6",
-                "gpt-5.6-mini",
-                "gpt-5.6-nano",
-            ),
+        self.transcript_btn = tk.Button(
+            transcript_frame,
+            text="Lấy transcript",
+            command=self.start_transcript
         )
-        self.model_box.pack(side="left", padx=8)
-
-        ttk.Separator(root, orient="horizontal").pack(
-            fill="x", padx=12, pady=8
-        )
+        self.transcript_btn.pack(side="left")
 
         # ============================================================
         # AI INPUT
@@ -116,24 +131,29 @@ class App:
             anchor="w", padx=12, pady=8
         )
 
-        tk.Button(
-            root,
-            text="PROCESS_WITH_OPENAI_API",
-            command=self.process
-        ).pack(pady=6)
+        # NEW
+        buttons_frame = tk.Frame(root)
+        buttons_frame.pack(pady=6)
 
         tk.Button(
-            root,
+            buttons_frame,
+            text="PROCESS_WITH_OPENAI_API",
+            command=self.process,
+            state = "disabled"
+        ).pack(side="left", padx=6)
+
+        tk.Button(
+            buttons_frame,
             text="CHECK_PROJECT",
             command=self.check_project
-        ).pack(pady=6)
+        ).pack(side="left", padx=6)
 
         self.chatgpt_web_btn = tk.Button(
-            root,
+            buttons_frame,
             text="PROCESS_WITH_CHATGPT_WEB",
             command=self.process_chatgpt_web
         )
-        self.chatgpt_web_btn.pack(pady=6)
+        self.chatgpt_web_btn.pack(side="left", padx=6)
 
         tk.Label(
             root,
@@ -341,6 +361,88 @@ class App:
             self.status.set(f"Đã tự động lưu: {path}")
         except Exception as exc:
             messagebox.showerror("Auto Export", str(exc))
+
+    def start_transcript(self):
+        raw = self.transcript_entry.get().strip()
+        video_id = extract_video_id(raw)
+
+        if not video_id:
+            messagebox.showerror(
+                "Link không hợp lệ",
+                "Không nhận diện được video ID."
+            )
+            return
+
+
+        try:
+            text, lang = fetch_transcript_text(video_id)
+            text = self.clean_transcript(text)
+            self.reference.delete("1.0", tk.END)
+            self.reference.insert("1.0", text)
+
+            messagebox.showinfo( "Hoàn tất", f"Đã lưu transcript vào Đoạn Code Mẫu" )
+
+        except (TranscriptsDisabled, NoTranscriptFound):
+            messagebox.showwarning( "Không có transcript","Video này không có phụ đề.")
+        except VideoUnavailable:
+            messagebox.showerror("Lỗi", "Video không khả dụng.")
+        except Exception as exc:
+            messagebox.showerror("Lỗi", str(exc))
+
+    @staticmethod
+    def clean_transcript( text, max_chars=10000, max_paragraphs=8):
+        # 1. Xóa timestamp [7s], [10s]...
+        text = re.sub(r'\[\d+s\]\s*', '', text)
+
+        # 2. Marker như [âm nhạc], [tiếng cười]...
+        #    được coi là điểm ngắt đoạn
+        text = re.sub(r'\[[^\]]*\]\s*', '\n\n', text)
+
+        # 3. Chuẩn hóa từng đoạn
+        raw_paragraphs = re.split(r'\n\s*\n', text)
+
+        paragraphs = []
+
+        for paragraph in raw_paragraphs:
+            paragraph = re.sub(r'\s+', ' ', paragraph).strip()
+
+            if paragraph:
+                paragraphs.append(paragraph)
+
+        # 4. Nếu tổng text <= 10.000 ký tự
+        #    thì giữ toàn bộ các đoạn
+        total_length = sum(len(p) for p in paragraphs)
+
+        if total_length <= max_chars:
+            selected = paragraphs
+
+        else:
+            # 5. Lấy các đoạn từ đầu.
+            #    Nếu thêm đoạn tiếp theo vượt 10.000
+            #    thì dừng luôn.
+            selected = []
+            current_length = 0
+
+            for paragraph in paragraphs:
+                paragraph_length = len(paragraph)
+
+                # +2 cho "\n\n"
+                separator_length = 2 if selected else 0
+
+                if current_length + separator_length + paragraph_length > max_chars:
+                    break
+
+                selected.append(paragraph)
+                current_length += separator_length + paragraph_length
+
+        # 6. Nếu sau khi giới hạn 10.000 ký tự
+        #    vẫn còn hơn 8 đoạn thì lấy tối đa 8 đoạn.
+        if len(selected) > max_paragraphs:
+            selected = selected[:max_paragraphs]
+
+        # 7. Ghép lại thành các đoạn văn
+        return '\n\n'.join(selected)
+
 
 if __name__ == "__main__":
     root = tk.Tk()
