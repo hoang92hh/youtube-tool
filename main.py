@@ -36,10 +36,17 @@ class App:
         self.skill_path = None
         self.chatgpt_web_data = None
 
+        # ============================================================
+        # FOLDER
+        # ============================================================
+
         folder_frame = tk.Frame(root)
         folder_frame.pack(fill="x", padx=12, pady=4)
 
-        tk.Label(folder_frame, text="Thư mục lưu:").pack(side="left")
+        tk.Label(
+            folder_frame,
+            text="Thư mục lưu:"
+        ).pack(side="left")
 
         self.default_folder_label = tk.Label(
             folder_frame,
@@ -47,19 +54,44 @@ class App:
             fg="#888"
         )
         self.default_folder_label.pack(side="left", padx=8)
+
         tk.Button(
             folder_frame,
             text="📁 Chọn thư mục",
             command=self.choose_default_folder
-        ).pack(side="right")
+        ).pack(side="right", padx=4)
+
+        tk.Button(
+            folder_frame,
+            text="CHECK_PROJECT",
+            command=self.check_project
+        ).pack(side="right", padx=4)
+
+        # ============================================================
+        # TRANSCRIPT
+        # ============================================================
 
         transcript_frame = tk.Frame(root)
-        transcript_frame.pack(fill="x", padx=12, pady=6)
+        transcript_frame.pack(
+            fill="x",
+            padx=12,
+            pady=6
+        )
 
-        tk.Label(transcript_frame, text="Video URL / ID:").pack(side="left")
+        tk.Label(
+            transcript_frame,
+            text="Video URL / ID:"
+        ).pack(side="left")
 
-        self.transcript_entry = tk.Entry(transcript_frame)
-        self.transcript_entry.pack(side="left", fill="x", expand=True, padx=8)
+        self.transcript_entry = tk.Entry(
+            transcript_frame
+        )
+        self.transcript_entry.pack(
+            side="left",
+            fill="x",
+            expand=True,
+            padx=8
+        )
 
         self.transcript_btn = tk.Button(
             transcript_frame,
@@ -69,62 +101,133 @@ class App:
         self.transcript_btn.pack(side="left")
 
         # ============================================================
-        # AI INPUT
+        # ĐOẠN VĂN MẪU
         # ============================================================
+
+        reference_section = tk.Frame(root)
+        reference_section.pack(fill="x", padx=12, pady=(4, 4))
+
+        reference_header = tk.Frame(reference_section)
+        reference_header.pack(fill="x")
+
+        self.reference_visible = True
+
+        self.reference_toggle_btn = tk.Button(
+            reference_header,
+            text="▲",
+            width=3,
+            command=self.toggle_reference
+        )
+        self.reference_toggle_btn.pack(side="left")
+
         tk.Label(
-            root,
+            reference_header,
             text="ĐOẠN VĂN MẪU",
             font=("Arial", 10, "bold")
-        ).pack(anchor="w", padx=12, pady=(4, 4))
+        ).pack(side="left")
 
-        self.reference = tk.Text(root, height=10, wrap="word")
-        self.reference.pack(fill="both", expand=True, padx=12)
+        self.get_adn_btn = tk.Button(
+            reference_header,
+            text="GET_ADN"
+        )
+        self.get_adn_btn.pack(side="right")
 
-        tk.Label(
-            root,
-            text="CHỦ ĐỀ MỚI",
-            font=("Arial", 10, "bold")
-        ).pack(anchor="w", padx=12, pady=(8, 4))
+        self.reference = tk.Text(
+            reference_section,
+            height=10,
+            wrap="word"
+        )
+        self.reference.pack(fill="x")
 
-        self.topic = tk.Entry(root)
-        self.topic.pack(fill="x", padx=12)
+        # ============================================================
+        # CHỦ ĐỀ MỚI
+        # ============================================================
 
-        self.status = tk.StringVar(value="Ready")
-        tk.Label(root, textvariable=self.status).pack(
-            anchor="w", padx=12, pady=8
+        topic_frame = tk.Frame(root)
+        topic_frame.pack(
+            fill="x",
+            padx=12,
+            pady=(8, 4)
         )
 
-        # NEW
-        buttons_frame = tk.Frame(root)
-        buttons_frame.pack(pady=6)
-
-        tk.Button(
-            buttons_frame,
-            text="CHECK_PROJECT",
-            command=self.check_project
-        ).pack(side="left", padx=6)
+        tk.Label(
+            topic_frame,
+            text="CHỦ ĐỀ MỚI",
+            font=("Arial", 10, "bold")
+        ).pack(side="left")
 
         self.chatgpt_web_btn = tk.Button(
-            buttons_frame,
+            topic_frame,
             text="PROCESS_WITH_CHATGPT_WEB",
             command=self.process_chatgpt_web
         )
-        self.chatgpt_web_btn.pack(side="left", padx=6)
+        self.chatgpt_web_btn.pack(
+            side="right"
+        )
+
+        self.topic = tk.Entry(root)
+        self.topic.pack(
+            fill="x",
+            padx=12
+        )
+
+
+        # ============================================================
+        # ARTICLE
+        # ============================================================
+
+        article_section = tk.Frame(root)
+        article_section.pack(fill="x", padx=12, pady=(8, 4))
+
+        article_header = tk.Frame(article_section)
+        article_header.pack(fill="x")
+
+        self.article_visible = True
+
+        self.article_toggle_btn = tk.Button(
+            article_header,
+            text="▲",
+            width=3,
+            command=self.toggle_article
+        )
+        self.article_toggle_btn.pack(side="left")
+
+        tk.Label(
+            article_header,
+            text="ARTICLE",
+            font=("Arial", 10, "bold")
+        ).pack(side="left")
+
+        tk.Button(
+            article_header,
+            text="EXPORT EXCEL",
+            command=self.export
+        ).pack(side="right")
+
+        self.result = tk.Text(
+            article_section,
+            height=10,
+            wrap="word"
+        )
+        self.result.pack(fill="both", expand=True)
+
+
+        # ============================================================
+        # STATUS
+        # ============================================================
+
+        self.status = tk.StringVar(
+            value="Ready"
+        )
 
         tk.Label(
             root,
-            text="ARTICLE",
-            font=("Arial", 10, "bold")
-        ).pack(anchor="w", padx=12, pady=(8, 4))
-
-        self.result = tk.Text(root, height=8, wrap="word")
-        self.result.pack(fill="both", expand=True, padx=12)
-
-        tk.Button(
-            root,
-            text="EXPORT EXCEL",
-            command=self.export
-        ).pack(pady=10)
+            textvariable=self.status
+        ).pack(
+            anchor="w",
+            padx=12,
+            pady=8
+        )
 
     # ============================================================
     # COMMON UI
@@ -323,6 +426,26 @@ class App:
         except Exception as exc:
             messagebox.showerror("Lỗi", str(exc))
 
+    def toggle_reference(self):
+        if self.reference_visible:
+            self.reference.pack_forget()
+            self.reference_toggle_btn.config(text="▼")
+            self.reference_visible = False
+        else:
+            self.reference.pack(fill="x")
+            self.reference_toggle_btn.config(text="▲")
+            self.reference_visible = True
+
+    def toggle_article(self):
+        if self.article_visible:
+            self.result.pack_forget()
+            self.article_toggle_btn.config(text="▼")
+            self.article_visible = False
+        else:
+            self.result.pack(fill="x")
+            self.article_toggle_btn.config(text="▲")
+            self.article_visible = True
+
     @staticmethod
     def clean_transcript( text, max_chars=10000, max_paragraphs=8):
         # 1. Xóa timestamp [7s], [10s]...
@@ -369,10 +492,6 @@ class App:
                 selected.append(paragraph)
                 current_length += separator_length + paragraph_length
 
-        # 6. Nếu sau khi giới hạn 10.000 ký tự
-        #    vẫn còn hơn 8 đoạn thì lấy tối đa 8 đoạn.
-        if len(selected) > max_paragraphs:
-            selected = selected[:max_paragraphs]
 
         # 7. Ghép lại thành các đoạn văn
         return '\n\n'.join(selected)
