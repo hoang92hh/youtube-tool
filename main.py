@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 from datetime import datetime
 
-from workflow import run_workflow
+# from workflow import run_workflow
 from excel_writer import write_excel
 from bridge_server import start_server, create_job, wait_for_result
 import re
@@ -32,7 +32,6 @@ class App:
         self.root.geometry("1000x950")
         self.root.minsize(850, 750)
 
-        self.data = None
         self.default_folder = None
         self.skill_path = None
         self.chatgpt_web_data = None
@@ -53,42 +52,6 @@ class App:
             text="📁 Chọn thư mục",
             command=self.choose_default_folder
         ).pack(side="right")
-
-        # ============================================================
-        # OPENAI API
-        # ============================================================
-        # tk.Label(
-        #     root,
-        #     text="OpenAI API",
-        #     font=("Arial", 11, "bold")
-        # ).pack(anchor="w", padx=12, pady=(12, 4))
-        #
-        # openai_frame = tk.Frame(root)
-        # openai_frame.pack(fill="x", padx=12, pady=4)
-        #
-        # tk.Label(openai_frame, text="API Key:").pack(side="left")
-        #
-        # self.openai_key_entry = tk.Entry(openai_frame, show="*")
-        # self.openai_key_entry.pack(side="left", fill="x", expand=True, padx=8)
-        #
-        # tk.Label(openai_frame, text="Model:").pack(side="left")
-        #
-        # self.model_var = tk.StringVar(value="gpt-5.6")
-        # self.model_box = ttk.Combobox(
-        #     openai_frame,
-        #     textvariable=self.model_var,
-        #     width=24,
-        #     values=(
-        #         "gpt-5.6",
-        #         "gpt-5.6-mini",
-        #         "gpt-5.6-nano",
-        #     ),
-        # )
-        # self.model_box.pack(side="left", padx=8)
-        #
-        # ttk.Separator(root, orient="horizontal").pack(
-        #     fill="x", padx=12, pady=8
-        # )
 
         transcript_frame = tk.Frame(root)
         transcript_frame.pack(fill="x", padx=12, pady=6)
@@ -134,13 +97,6 @@ class App:
         # NEW
         buttons_frame = tk.Frame(root)
         buttons_frame.pack(pady=6)
-
-        tk.Button(
-            buttons_frame,
-            text="PROCESS_WITH_OPENAI_API",
-            command=self.process,
-            state = "disabled"
-        ).pack(side="left", padx=6)
 
         tk.Button(
             buttons_frame,
@@ -214,11 +170,37 @@ class App:
     def check_project(self):
         try:
             start_server()
-            create_job("CHECK_PROJECT", "PROJECT")
-            print("Đang chạy function Check project")
+            job_id = create_job("CHECK_PROJECT", "PROJECT")
+
+            self.status.set("Check Project: đang kiểm tra...")
+
+            threading.Thread(
+                target=self._wait_check_project_result,
+                args=(job_id,),
+                daemon=True
+            ).start()
 
         except Exception as exc:
             messagebox.showerror("Check Project", str(exc))
+
+    def _wait_check_project_result(self, job_id):
+        try:
+            output = wait_for_result(job_id, 600)
+            if not output:
+                raise TimeoutError("Check Project Fail")
+
+            import json
+            data = json.loads(output.read_text(encoding="utf-8"))
+            message = data.get("message")
+
+            if not message:
+                raise ValueError("CHECK_PROJECT không có message.")
+
+            self.root.after(0,lambda: self.status.set("CHECK_PROJECT", message))
+            self.root.after(0,lambda: messagebox.showinfo("CHECK_PROJECT", message))
+
+        except Exception as exc:
+            self.root.after(0,  lambda: messagebox.showerror("Check Project",str(exc)))
 
     def process_chatgpt_web(self):
         context = self.reference.get("1.0", "end").strip()
@@ -273,61 +255,13 @@ class App:
         self.status.set(f"ChatGPT Web: Done — {len(df)} scenes")
         self._auto_export({"scenes": df.to_dict(orient="records")})
 
-    def process(self):
-        reference = self.reference.get("1.0", "end").strip()
-        topic = self.topic.get().strip()
-        api_key = self.openai_key_entry.get().strip()
-        model = self.model_var.get().strip()
-
-        if not api_key:
-            messagebox.showwarning(
-                "OpenAI API",
-                "Vui lòng nhập OpenAI API Key."
-            )
-            return
-
-        if not reference or not topic:
-            messagebox.showwarning(
-                "Input",
-                "Cần nhập đoạn văn mẫu và chủ đề mới."
-            )
-            return
-
-        # Replace .env for the current process only.
-        os.environ["OPENAI_API_KEY"] = api_key
-        os.environ["OPENAI_MODEL"] = model
-
-        try:
-            self.status.set("Processing...")
-            self.root.update_idletasks()
-
-            # NEW
-            self.data = run_workflow(
-                reference,
-                topic,
-                self.status_callback
-            )
-
-            self.result.delete("1.0", "end")
-            self.result.insert("1.0", self.data["article"])
-            self.status.set(
-                f"Done - {len(self.data['scenes'])} scenes"
-            )
-            # self._auto_export(self.data)
-
-        except Exception as exc:
-            self.status.set("Error")
-            messagebox.showerror("Error", str(exc))
-
     def status_callback(self, text):
         self.status.set(text)
         self.root.update_idletasks()
 
     # NEW
     def export(self):
-        if self.data is not None:
-            export_data = self.data
-        elif self.chatgpt_web_data is not None:
+        if self.chatgpt_web_data is not None:
             export_data = {"scenes": self.chatgpt_web_data.to_dict(orient="records")}
         else:
             messagebox.showwarning("Export", "Chưa có kết quả.")
