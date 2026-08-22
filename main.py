@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import json
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 from datetime import datetime
@@ -7,6 +8,7 @@ from datetime import datetime
 # from workflow import run_workflow
 from excel_writer import write_excel
 from bridge_server import start_server, create_job, wait_for_result
+from  prompt_builder import build_get_dna_prompt, build_research_write_prompt
 import re
 
 import threading
@@ -14,7 +16,6 @@ import threading
 # YouTube logic is kept in youtube_gui.py.
 # main.py only owns the UI and calls these methods.
 from youtube_content import (
-    process_channel,
     extract_video_id,
     fetch_transcript_text,
     TranscriptsDisabled,
@@ -35,6 +36,10 @@ class App:
         self.default_folder = None
         self.skill_path = None
         self.chatgpt_web_data = None
+
+        self.author_dir = Path(__file__).resolve().parent / "author"
+        self.author_dir.mkdir(parents=True, exist_ok=True)
+        self.author_files = {}
 
         # ============================================================
         # FOLDER
@@ -128,7 +133,8 @@ class App:
 
         self.get_adn_btn = tk.Button(
             reference_header,
-            text="GET_ADN"
+            text="GET_ADN",
+            command=self.get_DNA
         )
         self.get_adn_btn.pack(side="right")
 
@@ -138,6 +144,17 @@ class App:
             wrap="word"
         )
         self.reference.pack(fill="x")
+
+
+        author_frame = tk.Frame(root)
+        author_frame.pack(fill="x", padx=12, pady=(4, 4))
+        tk.Label(author_frame, text="DNA TÁC GIẢ:").pack(side="left")
+
+        self.author_combo = ttk.Combobox(author_frame, state="readonly")
+        self.author_combo.pack(side="left", fill="x", expand=True, padx=8)
+        self.author_combo.bind("<<ComboboxSelected>>", self.on_author_selected)
+        self.load_authors()
+
 
         # ============================================================
         # CHỦ ĐỀ MỚI
@@ -241,48 +258,18 @@ class App:
             self.default_folder = folder
             self.default_folder_label.config(text=folder, fg="#000")
 
-    def youtube_log_fn(self, message):
-        # process_channel() calls this while working.
-        self.youtube_log.insert("end", message + "\n")
-        self.youtube_log.see("end")
-        self.root.update_idletasks()
-
-
-    # ============================================================
-    # AI WORKFLOW - GIỮ NGUYÊN LOGIC
-    # ============================================================
-
-    def choose_skill(self):
-        path=filedialog.askopenfilename(title="Chọn Skill Markdown",filetypes=[("Markdown","*.md"),("Text","*.txt"),("All files","*.*")])
-        if path:
-            self.skill_path=path
-            self.skill_path_label.config(text=path,fg="#000")
-
-    STATE_LABELS = {
-        "queued": "Đang chờ extension lấy job...",
-        "assigned": "Extension đã nhận job...",
-        "received": "Content script đã nhận job...",
-        "attaching": "Đang đính kèm tệp vào ChatGPT...",
-        "prompt_sent": "Đã gửi prompt, chờ ChatGPT xử lý...",
-        "waiting_gpt": "Đang chờ ChatGPT trả lời...",
-        "done": "Hoàn tất.",
-        "error": "Lỗi.",
-    }
 
     # NEW
     def check_project(self):
         try:
             start_server()
-            job_id = create_job("CHECK_PROJECT", "PROJECT")
-
+            job_id = create_job("PROJECT",  "CHECK_PROJECT")
             self.status.set("Check Project: đang kiểm tra...")
-
             threading.Thread(
                 target=self._wait_check_project_result,
                 args=(job_id,),
                 daemon=True
             ).start()
-
         except Exception as exc:
             messagebox.showerror("Check Project", str(exc))
 
@@ -305,16 +292,70 @@ class App:
         except Exception as exc:
             self.root.after(0,  lambda: messagebox.showerror("Check Project",str(exc)))
 
-    def process_chatgpt_web(self):
-        context = self.reference.get("1.0", "end").strip()
-        topic = self.topic.get().strip()
-        if not context or not topic:
-            messagebox.showwarning("Input", "Cần nhập đoạn văn mẫu và chủ đề mới.")
-            return
 
+    def get_DNA(self):
+        context = self.reference.get("1.0", "end").strip()
+        if not context:
+            messagebox.showwarning("Input", "Cần nhập đoạn văn mẫu.")
+            return
         try:
             start_server()
-            job_id = create_job(context=context,topic=topic)
+            context = build_get_dna_prompt(context)
+            job_id = create_job(context= context,topic= "GET_DNA")
+            self.status.set(f"get_DNA: waiting — {job_id}")
+            threading.Thread(target=self._wait_get_DNA_result,args=(job_id,),daemon=True).start()
+            print("Đang chạy function get_DNA")
+
+        except Exception as exc:
+            messagebox.showerror("getDNA", str(exc))
+
+    def _wait_get_DNA_result(self, job_id):
+        try:
+            output = wait_for_result(job_id, 600)
+
+            if not output:
+                raise TimeoutError("Không nhận được output.json từ extension.")
+
+            data = json.loads(output.read_text(encoding="utf-8"))
+
+            # Kiểm tra kết quả GET_DNA
+            if not isinstance(data, dict):
+                raise ValueError("Output GET_DNA không phải JSON object.")
+
+            # Lấy nội dung DNA
+            author_name = data.get("author_name", "unknown_author")
+            dna = data.get("style_dna")
+
+            if not dna:
+                raise ValueError("JSON không có trường 'style_dna'.")
+
+            # Lưu toàn bộ kết quả DNA
+            json_file = self.author_dir / f"{author_name}.json"
+            with json_file.open("w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+
+            self.author_files["author_dna"] = json_file
+            self.author_dna = dna
+
+            # Tên tác giả nếu ChatGPT trả về
+
+
+            self.root.after(0, lambda: self.status.set(f"get_DNA: Done — {author_name}"))
+            self.root.after(0, lambda: messagebox.showinfo("get_DNA", f"DNA đã được lấy: {author_name}"))
+
+        except Exception as exc:
+            self.root.after(0, lambda: messagebox.showerror("getDNA", str(exc)))
+            self.root.after(0, lambda: self.status.set("getDNA: Error"))
+
+    def process_chatgpt_web(self):
+
+        content = self.topic.get().strip()
+        if  not content:
+            messagebox.showwarning("Input", "Cần nhập chủ đề mới.")
+            return
+        try:
+            start_server()
+            job_id = create_job(context= content ,topic="PROCESS_CHATGPT_WEB")
             self.status.set(f"ChatGPT Web: waiting — {job_id}" )
             threading.Thread(target=self._wait_chatgpt_result,args=(job_id,),daemon=True).start()
             print("Đang chạy function Process ChatGPT Web")
@@ -413,10 +454,9 @@ class App:
 
         try:
             text, lang = fetch_transcript_text(video_id)
-            text = self.clean_transcript(text)
+
             self.reference.delete("1.0", tk.END)
             self.reference.insert("1.0", text)
-
             messagebox.showinfo( "Hoàn tất", f"Đã lưu transcript vào Đoạn Code Mẫu" )
 
         except (TranscriptsDisabled, NoTranscriptFound):
@@ -446,55 +486,34 @@ class App:
             self.article_toggle_btn.config(text="▲")
             self.article_visible = True
 
-    @staticmethod
-    def clean_transcript( text, max_chars=10000, max_paragraphs=8):
-        # 1. Xóa timestamp [7s], [10s]...
-        text = re.sub(r'\[\d+s\]\s*', '', text)
 
-        # 2. Marker như [âm nhạc], [tiếng cười]...
-        #    được coi là điểm ngắt đoạn
-        text = re.sub(r'\[[^\]]*\]\s*', '\n\n', text)
+    def load_authors(self):
+        self.author_files.clear()
+        authors = []
+        for path in sorted(self.author_dir.glob("*.json")):
+            try:
+                data = json.loads(path.read_text(encoding="utf-8"))
+                author_name = data.get("author_name", "").strip()
+                if author_name:
+                    authors.append(author_name)
+                    self.author_files[author_name] = path
+            except Exception as exc:
+                print(f"Không đọc được {path.name}: {exc}")
+        self.author_combo["values"] = authors
+        if authors:
+            self.author_combo.current(0)
 
-        # 3. Chuẩn hóa từng đoạn
-        raw_paragraphs = re.split(r'\n\s*\n', text)
+    def on_author_selected(self, event=None):
+        author_name = self.author_combo.get()
+        path = self.author_files.get(author_name)
+        if not path:
+            return
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            self.author_dna = data.get("style_dna", "")
+        except Exception as exc:
+            messagebox.showerror("DNA tác giả", str(exc))
 
-        paragraphs = []
-
-        for paragraph in raw_paragraphs:
-            paragraph = re.sub(r'\s+', ' ', paragraph).strip()
-
-            if paragraph:
-                paragraphs.append(paragraph)
-
-        # 4. Nếu tổng text <= 10.000 ký tự
-        #    thì giữ toàn bộ các đoạn
-        total_length = sum(len(p) for p in paragraphs)
-
-        if total_length <= max_chars:
-            selected = paragraphs
-
-        else:
-            # 5. Lấy các đoạn từ đầu.
-            #    Nếu thêm đoạn tiếp theo vượt 10.000
-            #    thì dừng luôn.
-            selected = []
-            current_length = 0
-
-            for paragraph in paragraphs:
-                paragraph_length = len(paragraph)
-
-                # +2 cho "\n\n"
-                separator_length = 2 if selected else 0
-
-                if current_length + separator_length + paragraph_length > max_chars:
-                    break
-
-                selected.append(paragraph)
-                current_length += separator_length + paragraph_length
-
-
-        # 7. Ghép lại thành các đoạn văn
-        return '\n\n'.join(selected)
 
 
 if __name__ == "__main__":
