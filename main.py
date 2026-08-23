@@ -312,37 +312,29 @@ class App:
     def _wait_get_DNA_result(self, job_id):
         try:
             output = wait_for_result(job_id, 600)
-
             if not output:
                 raise TimeoutError("Không nhận được output.json từ extension.")
 
             data = json.loads(output.read_text(encoding="utf-8"))
-
-            # Kiểm tra kết quả GET_DNA
             if not isinstance(data, dict):
                 raise ValueError("Output GET_DNA không phải JSON object.")
 
-            # Lấy nội dung DNA
-            author_name = data.get("author_name", "unknown_author")
+            author_name = str(data.get("author_name", "")).strip()
             dna = data.get("style_dna")
-
+            if not author_name:
+                raise ValueError("JSON không có trường 'author_name'.")
             if not dna:
                 raise ValueError("JSON không có trường 'style_dna'.")
 
-            # Lưu toàn bộ kết quả DNA
-            json_file = self.author_dir / f"{author_name}.json"
-            with json_file.open("w", encoding="utf-8") as f:
-                json.dump(data, f, ensure_ascii=False, indent=2)
+            md_file = self.author_dir / f"{author_name}.md"
+            md_file.write_text(str(dna), encoding="utf-8")
 
-            self.author_files["author_dna"] = json_file
-            self.author_dna = dna
+            self.author_files[author_name] = md_file
+            self.author_dna = str(dna)
 
-            # Tên tác giả nếu ChatGPT trả về
-
-
+            self.root.after(0, lambda: self._refresh_author_combo(author_name))
             self.root.after(0, lambda: self.status.set(f"get_DNA: Done — {author_name}"))
             self.root.after(0, lambda: messagebox.showinfo("get_DNA", f"DNA đã được lấy: {author_name}"))
-
         except Exception as exc:
             self.root.after(0, lambda: messagebox.showerror("getDNA", str(exc)))
             self.root.after(0, lambda: self.status.set("getDNA: Error"))
@@ -486,33 +478,36 @@ class App:
             self.article_toggle_btn.config(text="▲")
             self.article_visible = True
 
-
     def load_authors(self):
         self.author_files.clear()
         authors = []
-        for path in sorted(self.author_dir.glob("*.json")):
-            try:
-                data = json.loads(path.read_text(encoding="utf-8"))
-                author_name = data.get("author_name", "").strip()
-                if author_name:
-                    authors.append(author_name)
-                    self.author_files[author_name] = path
-            except Exception as exc:
-                print(f"Không đọc được {path.name}: {exc}")
+
+        for path in sorted(self.author_dir.glob("*.md")):
+            author_name = path.stem.strip()
+            if author_name:
+                authors.append(author_name)
+                self.author_files[author_name] = path
+
         self.author_combo["values"] = authors
         if authors:
             self.author_combo.current(0)
+            self.on_author_selected()
 
     def on_author_selected(self, event=None):
         author_name = self.author_combo.get()
         path = self.author_files.get(author_name)
         if not path:
             return
+
         try:
-            data = json.loads(path.read_text(encoding="utf-8"))
-            self.author_dna = data.get("style_dna", "")
+            self.author_dna = path.read_text(encoding="utf-8").strip()
         except Exception as exc:
             messagebox.showerror("DNA tác giả", str(exc))
+
+    def _refresh_author_combo(self, author_name):
+        authors = sorted(self.author_files.keys())
+        self.author_combo["values"] = authors
+        self.author_combo.set(author_name)
 
 
 
