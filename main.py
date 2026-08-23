@@ -286,7 +286,7 @@ class App:
             if not message:
                 raise ValueError("CHECK_PROJECT không có message.")
 
-            self.root.after(0,lambda: self.status.set("CHECK_PROJECT", message))
+            self.root.after(0, lambda: self.status.set(f"CHECK_PROJECT: Done — {message}"))
             self.root.after(0,lambda: messagebox.showinfo("CHECK_PROJECT", message))
 
         except Exception as exc:
@@ -313,7 +313,7 @@ class App:
         try:
             output = wait_for_result(job_id, 600)
             if not output:
-                raise TimeoutError("Không nhận được output.json từ extension.")
+                raise TimeoutError("Không nhận được output.json DNA từ extension.")
 
             data = json.loads(output.read_text(encoding="utf-8"))
             if not isinstance(data, dict):
@@ -321,6 +321,7 @@ class App:
 
             author_name = str(data.get("author_name", "")).strip()
             dna = data.get("style_dna")
+
             if not author_name:
                 raise ValueError("JSON không có trường 'author_name'.")
             if not dna:
@@ -339,19 +340,27 @@ class App:
             self.root.after(0, lambda: messagebox.showerror("getDNA", str(exc)))
             self.root.after(0, lambda: self.status.set("getDNA: Error"))
 
-    def process_chatgpt_web(self):
 
-        content = self.topic.get().strip()
-        if  not content:
+    def process_chatgpt_web(self):
+        topic = self.topic.get().strip()
+        author_name = self.author_combo.get().strip()
+        if not topic:
             messagebox.showwarning("Input", "Cần nhập chủ đề mới.")
             return
+        if not author_name:
+            messagebox.showwarning("Input", "Cần chọn DNA tác giả.")
+            return
         try:
+            md_file = self.author_files.get(author_name)
+            if not md_file or not md_file.exists():
+                raise FileNotFoundError(f"Không tìm thấy file DNA: {author_name}.md")
+            dna = md_file.read_text(encoding="utf-8")
             start_server()
-            job_id = create_job(context= content ,topic="PROCESS_CHATGPT_WEB")
-            self.status.set(f"ChatGPT Web: waiting — {job_id}" )
-            threading.Thread(target=self._wait_chatgpt_result,args=(job_id,),daemon=True).start()
+            content = build_research_write_prompt(dna, topic)
+            job_id = create_job(context=content, topic="PROCESS_CHATGPT_WEB")
+            self.status.set(f"ChatGPT Web: waiting — {job_id}")
+            threading.Thread(target=self._wait_chatgpt_result, args=(job_id,), daemon=True).start()
             print("Đang chạy function Process ChatGPT Web")
-
         except Exception as exc:
             messagebox.showerror("ChatGPT Web", str(exc))
 
@@ -359,28 +368,13 @@ class App:
         try:
             output = wait_for_result(job_id, 600)
             if not output:
-                raise TimeoutError("Không nhận được output.json từ extension.")
+                raise TimeoutError("Không nhận được New Content từ extension.")
 
-            import json
-            import pandas as pd
+            content = json.loads(output.read_text(encoding="utf-8"))
+            if not isinstance(content, str):
+                raise ValueError("Output ChatGPT không phải text.")
 
-            data = json.loads(output.read_text(encoding="utf-8"))
-            scenes = data.get("scenes")
-            if not isinstance(scenes, list):
-                raise ValueError("JSON không có trường scenes hợp lệ.")
-
-            required = ["stt", "noi_dung_goc", "cau_prompt", "thoi_gian_scene"]
-            for i, scene in enumerate(scenes, 1):
-                missing = [x for x in required if x not in scene]
-                if missing:
-                    raise ValueError(f"Scene {i} thiếu: {', '.join(missing)}")
-
-            df = pd.DataFrame(scenes)
-            self.chatgpt_web_data = df
-            self.root.after(
-                0,
-                lambda: self._show_chatgpt_result(df, json.dumps(data, ensure_ascii=False, indent=2))
-            )
+            self._auto_export_txt(content)
         except Exception as exc:
             self.root.after(0, lambda: messagebox.showerror("ChatGPT Web", str(exc)))
             self.root.after(0, lambda: self.status.set("ChatGPT Web: Error"))
@@ -429,6 +423,22 @@ class App:
         try:
             write_excel(export_data, path)
             self.status.set(f"Đã tự động lưu: {path}")
+        except Exception as exc:
+            messagebox.showerror("Auto Export", str(exc))
+
+
+    # NEW
+    def _auto_export_txt(self, export_data):
+        folder = self.default_folder or str(BASE_DIR)
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"result_{timestamp}.md"
+        path = str(Path(folder) / filename)
+
+        try:
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(str(export_data))
+            self.status.set(f"Đã tự động lưu: {path}")
+            self.root.after(0, lambda: messagebox.showinfo("Auto Export", f"Đã tự động lưu: {path}"))
         except Exception as exc:
             messagebox.showerror("Auto Export", str(exc))
 

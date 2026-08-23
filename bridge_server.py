@@ -1,4 +1,4 @@
-import json, threading, uuid
+import json, threading, uuid, time
 from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -35,25 +35,36 @@ def create_job(context, topic):
     with _lock:
         _pending.append(job_id)
 
+    print(f"[BRIDGE] job created: {job_id} ({topic})")
+
     return job_id
 
 
-# NEW
-def get_job():
-    with _lock:
-        job_id = _pending.pop(0) if _pending else None
+def get_job(wait_timeout=0):
+    """
+    Long-poll: nếu chưa có job, chờ tối đa wait_timeout giây rồi mới trả về
+    None, thay vì trả về ngay lập tức. Giúp extension nhận job gần như tức
+    thì thay vì phụ thuộc vào chu kỳ poll cố định phía client.
+    """
+    end = time.time() + wait_timeout
 
-    if not job_id:
-        return None
+    while True:
+        with _lock:
+            job_id = _pending.pop(0) if _pending else None
 
-    return json.loads(
-        (JOBS / job_id / "request.json").read_text(encoding="utf-8")
-    )
+        if job_id:
+            print(f"[BRIDGE] job dispatched: {job_id}")
+            return json.loads(
+                (JOBS / job_id / "request.json").read_text(encoding="utf-8")
+            )
+
+        if time.time() >= end:
+            return None
+
+        time.sleep(0.3)
 
 
 def wait_for_result(job_id, timeout=600):
-    import time
-
     p = JOBS / job_id / "output.json"
     end = time.time() + timeout
 
@@ -85,11 +96,8 @@ class H(BaseHTTPRequestHandler):
         p = urlparse(self.path).path
 
         if p == "/api/job":
-            job = get_job()
-            return self.send(
-                200,
-                json.dumps({"job": job}, ensure_ascii=False)
-            )
+            job = get_job(wait_timeout=25)  # ← chờ ở đây tới 25s
+            return self.send(200, json.dumps({"job": job}, ensure_ascii=False))
 
         if p.startswith("/api/files/"):
             parts = p[len("/api/files/"):].split("/")
@@ -102,11 +110,7 @@ class H(BaseHTTPRequestHandler):
             if not f.is_file():
                 return self.send(404, b"not found", "text/plain")
 
-            return self.send(
-                200,
-                f.read_bytes(),
-                "text/plain; charset=utf-8"
-            )
+            return self.send(200,f.read_bytes(), "text/plain; charset=utf-8")
 
         if p == "/api/health":
             return self.send(200, b'{"ok":true}')
@@ -131,6 +135,8 @@ class H(BaseHTTPRequestHandler):
                 json.dumps(data, ensure_ascii=False, indent=2),
                 encoding="utf-8"
             )
+
+            print(f"[BRIDGE] result received: {job_id}")
 
             self.send(200, b'{"ok":true}')
 
