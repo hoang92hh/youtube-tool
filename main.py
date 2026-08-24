@@ -1,3 +1,4 @@
+import sys
 from pathlib import Path
 import os
 import json
@@ -23,7 +24,7 @@ from youtube_content import (
     VideoUnavailable,
 )
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(sys.executable).parent if getattr(sys, "frozen", False) else Path(__file__).resolve().parent
 
 
 class App:
@@ -37,11 +38,11 @@ class App:
         self.skill_path = None
         self.chatgpt_web_data = None
 
-        self.author_dir = Path(__file__).resolve().parent / "author"
+        self.author_dir = BASE_DIR/ "author"
         self.author_dir.mkdir(parents=True, exist_ok=True)
         self.author_files = {}
 
-        self.result_dir = Path(__file__).resolve().parent / "result"
+        self.result_dir = BASE_DIR/ "result"
         self.result_dir.mkdir(parents=True, exist_ok=True)
 
         # ============================================================
@@ -333,9 +334,9 @@ class App:
             if not output:
                 raise TimeoutError("Không nhận được output DNA từ extension.")
 
-            dna = output.read_text(encoding="utf-8").strip()
-            if not dna:
-                raise ValueError("Output GET_DNA đang trống.")
+            dna = json.loads(output.read_text(encoding="utf-8"))
+            if not isinstance(dna, str) or not dna.strip():
+                raise ValueError("Output ChatGPT DNA đang trống.")
 
             print("[BRIDGE] DATA:", dna)
 
@@ -383,8 +384,8 @@ class App:
             if not output:
                 raise TimeoutError("Không nhận được New Content từ extension.")
 
-            content = output.read_text(encoding="utf-8").strip()
-            if not content:
+            content = json.loads(output.read_text(encoding="utf-8"))
+            if not isinstance(content, str) or not content.strip():
                 raise ValueError("Output ChatGPT đang trống.")
 
             self._auto_export_txt(content)
@@ -442,7 +443,8 @@ class App:
 
     # NEW
     def _auto_export_txt(self, export_data):
-        folder = self.default_folder or self.result_dir
+        folder = Path(self.default_folder) if self.default_folder else self.result_dir
+        folder.mkdir(parents=True, exist_ok=True)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = f"result_{timestamp}.md"
         path = str(Path(folder) / filename)
