@@ -41,12 +41,15 @@ class App:
         self.author_dir.mkdir(parents=True, exist_ok=True)
         self.author_files = {}
 
+        self.result_dir = Path(__file__).resolve().parent / "result"
+        self.result_dir.mkdir(parents=True, exist_ok=True)
+
         # ============================================================
         # FOLDER
         # ============================================================
 
         folder_frame = tk.Frame(root)
-        folder_frame.pack(fill="x", padx=12, pady=4)
+        folder_frame.pack(fill="x", padx=12, pady=15)
 
         tk.Label(
             folder_frame,
@@ -64,13 +67,13 @@ class App:
             folder_frame,
             text="📁 Chọn thư mục",
             command=self.choose_default_folder
-        ).pack(side="right", padx=4)
+        ).pack(side="right", padx=8)
 
         tk.Button(
             folder_frame,
             text="CHECK_PROJECT",
             command=self.check_project
-        ).pack(side="right", padx=4)
+        ).pack(side="right", padx=8)
 
         # ============================================================
         # TRANSCRIPT
@@ -80,7 +83,7 @@ class App:
         transcript_frame.pack(
             fill="x",
             padx=12,
-            pady=6
+            pady=15
         )
 
         tk.Label(
@@ -110,7 +113,7 @@ class App:
         # ============================================================
 
         reference_section = tk.Frame(root)
-        reference_section.pack(fill="x", padx=12, pady=(4, 4))
+        reference_section.pack(fill="x", padx=10, pady=(10, 10))
 
         reference_header = tk.Frame(reference_section)
         reference_header.pack(fill="x")
@@ -131,23 +134,41 @@ class App:
             font=("Arial", 10, "bold")
         ).pack(side="left")
 
-        self.get_adn_btn = tk.Button(
-            reference_header,
-            text="GET_ADN",
-            command=self.get_DNA
-        )
-        self.get_adn_btn.pack(side="right")
+        self.reference_content = tk.Frame(reference_section)
+        self.reference_content.pack(fill="x")
 
         self.reference = tk.Text(
-            reference_section,
+            self.reference_content,
             height=10,
             wrap="word"
         )
-        self.reference.pack(fill="x")
+        self.reference.pack(fill="x", pady=(5, 5))
+
+        reference_dna_frame = tk.Frame(self.reference_content)
+        reference_dna_frame.pack(fill="x")
+
+        tk.Label(
+            reference_dna_frame,
+            text="Nhập tên author"
+        ).pack(side="left", padx=(0, 5))
+
+        self.dna_name = tk.Entry(reference_dna_frame)
+        self.dna_name.pack(side="left", fill="x", expand=True)
+
+        self.get_adn_btn = tk.Button(
+            reference_dna_frame,
+            text="GET DNA",
+            command=self.get_DNA
+        )
+        self.get_adn_btn.pack(side="right", padx=(5, 0))
 
 
+
+        # ============================================================
+        # CHỦ ĐỀ MỚI
+        # ============================================================
         author_frame = tk.Frame(root)
-        author_frame.pack(fill="x", padx=12, pady=(4, 4))
+        author_frame.pack(fill="x", padx=12, pady=(60, 10))
         tk.Label(author_frame, text="DNA TÁC GIẢ:").pack(side="left")
 
         self.author_combo = ttk.Combobox(author_frame, state="readonly")
@@ -156,15 +177,11 @@ class App:
         self.load_authors()
 
 
-        # ============================================================
-        # CHỦ ĐỀ MỚI
-        # ============================================================
-
         topic_frame = tk.Frame(root)
         topic_frame.pack(
             fill="x",
             padx=12,
-            pady=(8, 4)
+            pady=(10, 10)
         )
 
         tk.Label(
@@ -189,44 +206,44 @@ class App:
         )
 
 
-        # ============================================================
-        # ARTICLE
-        # ============================================================
-
-        article_section = tk.Frame(root)
-        article_section.pack(fill="x", padx=12, pady=(8, 4))
-
-        article_header = tk.Frame(article_section)
-        article_header.pack(fill="x")
-
-        self.article_visible = True
-
-        self.article_toggle_btn = tk.Button(
-            article_header,
-            text="▲",
-            width=3,
-            command=self.toggle_article
-        )
-        self.article_toggle_btn.pack(side="left")
-
-        tk.Label(
-            article_header,
-            text="ARTICLE",
-            font=("Arial", 10, "bold")
-        ).pack(side="left")
-
-        tk.Button(
-            article_header,
-            text="EXPORT EXCEL",
-            command=self.export
-        ).pack(side="right")
-
-        self.result = tk.Text(
-            article_section,
-            height=10,
-            wrap="word"
-        )
-        self.result.pack(fill="both", expand=True)
+        # # ============================================================
+        # # ARTICLE
+        # # ============================================================
+        #
+        # article_section = tk.Frame(root)
+        # article_section.pack(fill="x", padx=12, pady=(8, 4))
+        #
+        # article_header = tk.Frame(article_section)
+        # article_header.pack(fill="x")
+        #
+        # self.article_visible = True
+        #
+        # self.article_toggle_btn = tk.Button(
+        #     article_header,
+        #     text="▲",
+        #     width=3,
+        #     command=self.toggle_article
+        # )
+        # self.article_toggle_btn.pack(side="left")
+        #
+        # tk.Label(
+        #     article_header,
+        #     text="ARTICLE",
+        #     font=("Arial", 10, "bold")
+        # ).pack(side="left")
+        #
+        # tk.Button(
+        #     article_header,
+        #     text="EXPORT EXCEL",
+        #     command=self.export
+        # ).pack(side="right")
+        #
+        # self.result = tk.Text(
+        #     article_section,
+        #     height=10,
+        #     wrap="word"
+        # )
+        # self.result.pack(fill="both", expand=True)
 
 
         # ============================================================
@@ -295,8 +312,9 @@ class App:
 
     def get_DNA(self):
         context = self.reference.get("1.0", "end").strip()
-        if not context:
-            messagebox.showwarning("Input", "Cần nhập đoạn văn mẫu.")
+        author_name = self.dna_name.get().strip()
+        if not context or not author_name:
+            messagebox.showwarning("Input", "Cần nhập đoạn văn mẫu và tên author.")
             return
         try:
             start_server()
@@ -313,25 +331,20 @@ class App:
         try:
             output = wait_for_result(job_id, 600)
             if not output:
-                raise TimeoutError("Không nhận được output.json DNA từ extension.")
+                raise TimeoutError("Không nhận được output DNA từ extension.")
 
-            data = json.loads(output.read_text(encoding="utf-8"))
-            if not isinstance(data, dict):
-                raise ValueError("Output GET_DNA không phải JSON object.")
-
-            author_name = str(data.get("author_name", "")).strip()
-            dna = data.get("style_dna")
-
-            if not author_name:
-                raise ValueError("JSON không có trường 'author_name'.")
+            dna = output.read_text(encoding="utf-8").strip()
             if not dna:
-                raise ValueError("JSON không có trường 'style_dna'.")
+                raise ValueError("Output GET_DNA đang trống.")
 
+            print("[BRIDGE] DATA:", dna)
+
+            author_name = f"{self.dna_name.get().strip()}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
             md_file = self.author_dir / f"{author_name}.md"
-            md_file.write_text(str(dna), encoding="utf-8")
+            md_file.write_text(dna, encoding="utf-8")
 
             self.author_files[author_name] = md_file
-            self.author_dna = str(dna)
+            self.author_dna = dna
 
             self.root.after(0, lambda: self._refresh_author_combo(author_name))
             self.root.after(0, lambda: self.status.set(f"get_DNA: Done — {author_name}"))
@@ -370,9 +383,9 @@ class App:
             if not output:
                 raise TimeoutError("Không nhận được New Content từ extension.")
 
-            content = json.loads(output.read_text(encoding="utf-8"))
-            if not isinstance(content, str):
-                raise ValueError("Output ChatGPT không phải text.")
+            content = output.read_text(encoding="utf-8").strip()
+            if not content:
+                raise ValueError("Output ChatGPT đang trống.")
 
             self._auto_export_txt(content)
         except Exception as exc:
@@ -415,7 +428,7 @@ class App:
 
     # NEW
     def _auto_export(self, export_data):
-        folder = self.default_folder or str(BASE_DIR)
+        folder = self.default_folder or self.result_dir
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = f"result_{timestamp}.xlsx"
         path = str(Path(folder) / filename)
@@ -429,7 +442,7 @@ class App:
 
     # NEW
     def _auto_export_txt(self, export_data):
-        folder = self.default_folder or str(BASE_DIR)
+        folder = self.default_folder or self.result_dir
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = f"result_{timestamp}.md"
         path = str(Path(folder) / filename)
@@ -470,11 +483,11 @@ class App:
 
     def toggle_reference(self):
         if self.reference_visible:
-            self.reference.pack_forget()
+            self.reference_content.pack_forget()
             self.reference_toggle_btn.config(text="▼")
             self.reference_visible = False
         else:
-            self.reference.pack(fill="x")
+            self.reference_content.pack(fill="x")
             self.reference_toggle_btn.config(text="▲")
             self.reference_visible = True
 
