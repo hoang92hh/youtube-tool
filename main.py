@@ -310,7 +310,6 @@ class App:
         except Exception as exc:
             self.root.after(0,  lambda: messagebox.showerror("Check Project",str(exc)))
 
-
     def get_DNA(self):
         context = self.reference.get("1.0", "end").strip()
         author_name = self.dna_name.get().strip()
@@ -320,6 +319,10 @@ class App:
         try:
             start_server()
             context = build_get_dna_prompt(context)
+            if context == "FILE_ERROR":
+                messagebox.showerror("getDNA",
+                                     'Nội dung file prompt_get_DNA.txt đang không đáp ứng được tiêu chuẩn, cần có ký tự {0} và từ khóa "AUTHOR STYLE DNA".')
+                return
             job_id = create_job(context= context,topic= "GET_DNA")
             self.status.set(f"get_DNA: waiting — {job_id}")
             threading.Thread(target=self._wait_get_DNA_result,args=(job_id,),daemon=True).start()
@@ -371,6 +374,10 @@ class App:
             dna = md_file.read_text(encoding="utf-8")
             start_server()
             content = build_research_write_prompt(dna, topic)
+            if content == "FILE_ERROR":
+                messagebox.showerror("Process",
+                                     'Nội dung file prompt_get_new_content.txt đang không đáp ứng được tiêu chuẩn, cần có ký tự {0} và {1}.')
+                return
             job_id = create_job(context=content, topic="PROCESS_CHATGPT_WEB")
             self.status.set(f"ChatGPT Web: waiting — {job_id}")
             threading.Thread(target=self._wait_chatgpt_result, args=(job_id,), daemon=True).start()

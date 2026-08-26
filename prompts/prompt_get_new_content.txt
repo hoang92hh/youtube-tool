@@ -1,0 +1,1 @@
+Sử dụng `02_research_and_write_author_style.md` trong project.\n\nTôi có các thông tin đầu vào quan trọng sau :\n{0}\n\nCHỦ ĐỀ:\n{1}\n\nHãy thực hiện workflow theo đúng quy định của skill 02_research_and_write_author_style.md "

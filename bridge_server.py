@@ -79,15 +79,17 @@ def wait_for_result(job_id, timeout=600):
 class H(BaseHTTPRequestHandler):
 
     def send(self, code, body, typ="application/json"):
-        b = body if isinstance(body, bytes) else body.encode()
-
-        self.send_response(code)
-        self.send_header("Access-Control-Allow-Origin", "*")
-        self.send_header("Access-Control-Allow-Headers", "Content-Type")
-        self.send_header("Content-Type", typ)
-        self.send_header("Content-Length", str(len(b)))
-        self.end_headers()
-        self.wfile.write(b)
+        b = body if isinstance(body, bytes) else body.encode("utf-8")
+        try:
+            self.send_response(code)
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("Access-Control-Allow-Headers", "Content-Type")
+            self.send_header("Content-Type", typ)
+            self.send_header("Content-Length", str(len(b)))
+            self.end_headers()
+            self.wfile.write(b)
+        except (BrokenPipeError, ConnectionAbortedError, ConnectionResetError):
+            print("[BRIDGE] Client đã đóng kết nối trước khi nhận response")
 
     def do_OPTIONS(self):
         self.send(204, b"")

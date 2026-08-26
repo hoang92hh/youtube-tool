@@ -1,0 +1,1 @@
+Sử dụng `01_analyze_author_style.md` để phân tích văn bản mẫu dưới đây và tạo AUTHOR STYLE DNA.\n\nVĂN BẢN MẪU:\n\n{0}
